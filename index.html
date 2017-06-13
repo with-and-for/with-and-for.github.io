@@ -1,0 +1,247 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="The website of With and For.">
+  <meta name="keywords" content="With, and, For, With and For, web, internet, design">
+  <meta name="viewport" content="width=device-width">
+  <title> With & For</title>
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <script src="https://unpkg.com/prismic.io/dist/prismic.io.min.js"></script>
+</head>
+
+<style>
+
+::-moz-selection { background-color: none; color: none ; }
+::selection { background-color: none; color: none ; }
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+::-moz-scrollbar { 
+    display: none; 
+}
+
+::-scrollbar { 
+    display: none; 
+}
+
+@font-face {
+font-family: 'Union';
+src: url('Union-Regular.otf');
+}
+
+html {
+  font-family: 'Union';
+  font-size: 19;
+  margin: 0;
+  width: 100vw;
+}
+
+.title {
+  color: black;
+  position: absolute;
+  margin: 0;
+  top: 1vh;
+  left: 1vw;
+}
+
+.info {
+  width: 45vw;
+  margin: 0;
+  position: absolute;
+  top: 7vh;
+  left: 1vw;
+  float: top;
+  display: inline-block;
+}
+
+a,a:visited,a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.topsection {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 50vh;
+  background-color: #f9f9f9;
+}
+
+.projects {
+  background-color: #fffff6;
+  z-index: 998;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: 50vh;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.project {
+  cursor: pointer;
+  margin-bottom: 3vh;
+  top: 7vh;
+  left: 1vw;
+  width: 28vw;
+  height: 400px;
+  position: relative;
+  float: left;
+  margin-right: 3vw;
+  margin-bottom: 3vh;
+  -webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;
+}
+
+img {
+  float: bottom;
+  width: 100%;
+}
+
+.titles {
+  cursor: pointer;
+  float: top;
+  margin: 0;
+}
+
+.person{
+ float: top;
+ margin: 0;
+}
+
+.year {
+  float: top;
+  margin: 0;
+}
+
+/* mobile things */
+
+  @media screen and (max-width: 736px){ 
+          html {
+            font-size: 20;
+          }
+          .info {
+            width: 80vw;
+          }
+
+          .project {
+            margin-bottom: 20vh;
+            width: 99vw;
+            float: top;
+            height: auto;
+          }
+          img {
+            width: 96%;
+          }
+
+  }
+
+</style>
+
+<body>
+
+<div class="topsection">
+    <p class="title"> With & For </p>
+    <p class="info"> With & For is a working-title for <a href="http://www.timzarras.com">Tim Zarras</a> and <a href="http://www.meilenehan.com">Mei Lenehan</a> in designing and developing projects relating to the web and formatting of any kind. <br><br><a href="mailto:hello@with-and-for.com" target="_top">hello@with-and-for.com</a></p>
+</div>
+
+<div class="projects">
+    <p class="title">Projects</p>
+</div>
+
+</body>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+    // query prismic repository //
+
+    Prismic.Api('https://withandfor.prismic.io/api', function (err, Api) {
+    Api.form("everything")
+    .ref(Api.master())
+    .query(Prismic.Predicates.at("document.type", "project-post"))
+    .submit(function (err, response) {
+      var results = response.results;
+      var projects = $(".projects");
+      var projecttitles = $(".projecttitles");
+      var year;
+      var title;
+      var person;
+      var image;
+      var number;
+
+
+
+      for (var i = 0; i < results.length; i++) {
+        
+        title = results[i].getStructuredText("project-post.title").asText();
+        person = results[i].getStructuredText("project-post.person").asText();
+        year = results[i].getStructuredText("project-post.year").asText();
+        number = results[i].getNumber("project-post.number");
+        //alert(number);
+        image = results[i].getStructuredText("project-post.image").asHtml();
+
+      
+        var projectdiv = $("<div class='project'></div>");
+        var titlediv = $("<p class='titles'></p>");
+        var persondiv = $("<p class='person'></p>");
+        var yeardiv = $("<p class='year'></p>");
+        var projectimage = $("<div></div>");
+        var order = $("<p style='display:none' class='number'></p>");
+
+        yeardiv.append(year);
+        titlediv.append(title);
+        persondiv.append(person);
+        projectimage.append(image);
+        order.append(number);
+        projectdiv.append(order,titlediv,persondiv,yeardiv,projectimage);
+        projects.append(projectdiv);
+
+      }
+
+      var $divs = $("div.project");
+
+      // sort projects by hidden number value, largest to smallest //
+
+      var ordered = $divs.sort(function (a, b) {
+        return $(a).find(".number").text() < $(b).find(".number").text();
+      });
+
+      // append reordered divs to project section //
+
+      $(ordered).appendTo(".projects");
+
+    });
+    
+  }, "MC5XVHNNbVMwQUFDd0FhQ0VE.77-977-9FBvvv73vv70O77-977-977-977-9LELvv73vv73vv71f77-977-977-977-977-977-977-977-977-9X--_ve-_vQwhLw");
+
+
+    $(window).scroll(function(){
+
+      var half = $(window).height()/2;
+
+      if ($(this).scrollTop() > half-1) { 
+        $(".projects").css("overflow","scroll");
+      } else {
+        $(".projects").css("overflow","hidden");
+      }
+
+    });
+
+});
+
+
+</script>
+
+
+
+
+
+
+</html>
