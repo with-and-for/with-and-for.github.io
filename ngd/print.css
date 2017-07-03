@@ -1,0 +1,48 @@
+
+@media print {
+
+
+	@font-face {
+    font-family: ap !important;
+    src: url(Apercu-Regular.otf) format("opentype");
+	}
+
+	html {
+		margin: 20% !important;
+	}
+
+	html, p, h1 {
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 100 !important;
+	}
+
+	.print {
+		display: none !important;
+	}
+
+	body {
+		font-family: ap !important;
+		width: 90% !important;
+		left: 12.5% !important;
+	}
+
+	p, li, ul {
+		font-size: 20 !important;
+	}
+
+
+	.recipetitle {
+		font-weight: 100 !important;
+		font-size: 30 !important;
+		width: 50% !important;
+	}
+
+
+}
+
+
+
+
+
+
+
