@@ -120,7 +120,7 @@ Prismic.Api('https://nicholas-dutton.prismic.io/api', function (err, Api) {
             console.log(number);
         
 
-            printWindow.document.write('<html><head><link rel="stylesheet" type="text/css" href="print.css" media="print"><link rel="stylesheet" type="text/css" href="screen.css" media="screen"><title>Recipe</title>');
+            printWindow.document.write('<html><head><link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet"><link rel="stylesheet" type="text/css" href="print.css" media="print"><link rel="stylesheet" type="text/css" href="screen.css" media="screen"><title>Recipe</title>');
             printWindow.document.write('</head><body>');
             printWindow.document.write(divContents);
             printWindow.document.write('</body></html>');

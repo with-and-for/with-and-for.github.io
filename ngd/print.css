@@ -2,13 +2,8 @@
 @media print {
 
 
-	@font-face {
-    font-family: ap !important;
-    src: url(Apercu-Regular.otf) format("opentype");
-	}
-
 	html {
-		margin: 20% !important;
+		margin: 5% !important;
 	}
 
 	html, p, h1 {
