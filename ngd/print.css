@@ -3,12 +3,12 @@
 
 
 	html {
-		font-family: 'Open Sans', sans-serif;
+		font-family: 'Open Sans', sans-serif !important;
 		margin: 5% !important;
 	}
 
 	html, p, h1 {
-		font-family: 'Open Sans', sans-serif;
+		font-family: 'Open Sans', sans-serif !important;
 		font-weight: 300 !important;
 	}
 
@@ -21,9 +21,9 @@
 		width: 90% !important;
 	}
 
-	p, li, ul {
+	p, li, ul, ol {
 		font-size: 20 !important;
-		font-family: 'Open Sans', sans-serif;
+		font-family: 'Open Sans', sans-serif !important;
 	}
 
 	p > strong {
