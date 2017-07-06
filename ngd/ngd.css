@@ -89,13 +89,66 @@ a {
 	color: blue;
 }
 
+.topbar {
+	position: absolute;
+	top: 100vh;
+	height: 9vh;
+	background-color: rgba(255,255,255,0.95);
+	width: 100vw;
+	z-index: 998;
+	-webkit-transition: background-color .3s linear;
+  	-moz-transition: background-color  .3s linear;
+  	-o-transition: background-color  .3s linear;
+  	transition: background-color  .3s linear;
+  	-webkit-box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.1);
+-moz-box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.1);
+box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.1);	
+}
+
+.topbar:hover {
+	background-color: rgba(255,255,255,1);
+}
+
+.navtitle {
+	cursor: pointer;
+	text-decoration: underline;
+	margin: 0;
+	position: absolute;
+	font-size: 20;
+	top: 25%;
+	left: 50%;
+	transform:translate(-50%,0%);
+  -webkit-transform:translate(-50%,0%);
+}
+
+.name {
+	cursor: pointer;
+	position: absolute;
+	margin: 0;
+	top: 25%;
+	left: 10vw;
+	font-size: 20;
+}
+
+.search {
+	border-radius: 3px;
+	font-size: 20;
+	background-color: #f7f95d;
+	padding: 1%;
+	position: absolute;
+	top: 25%;
+	right: 10vw;
+	width: 12vw;
+	height: 50%;
+	outline: none;
+}
+
 .lime {
 	position: fixed;
 	bottom: -10vh !important;
 	right: 20vw;
 	height: auto;
 	width: 35vw;
-	z-index: 998;
     -webkit-transition: all .3s linear;
   	-moz-transition: all .3s linear;
   	-o-transition: all .3s linear;
@@ -111,7 +164,6 @@ a {
 	left: -10vw;
 	height: auto;
 	width: 20vw;
-	z-index: 999;
     -webkit-transition: all .3s linear;
   	-moz-transition: all .3s linear;
   	-o-transition: all .3s linear;
@@ -127,7 +179,6 @@ a {
 	right: 0vw;
 	height: auto;
 	width: 50vw;
-	z-index: 998;
     -webkit-transition: all .3s linear;
   	-moz-transition: all .3s linear;
   	-o-transition: all .3s linear;
@@ -144,7 +195,6 @@ a {
 	left: -8vw;
 	height: auto;
 	width: 35vw;
-	z-index: 997;
     -webkit-transition: all .3s linear;
   	-moz-transition: all .3s linear;
   	-o-transition: all .3s linear;
@@ -155,7 +205,6 @@ a {
 }
 
 .strawberry {
-	z-index: 998;
 	position: fixed;
 	width: 20vw;
 	height: auto;
@@ -170,24 +219,29 @@ a {
     transform: rotate(-27deg);
 }
 .down {
+	border-radius: 3px;
 	background-color: none;
-	z-index: 999;
+	z-index: 996 !important;
 	cursor: pointer;
 	position: absolute;
 	top: 80vh;
-	left: 4.25vw;
+	left: 50%;
 	font-size: 38;
 	color: black;
 	padding: 8px;
-	background: rgba(255, 255, 255, 0.1);
+	background: rgba(255, 255, 255, 0.5);
 	font-weight: 500;
+	transform:translate(-50%,0%);
+  -webkit-transform:translate(-50%,0%);
 	  
 }
 
 .read {
-	border-radius: 1px;
+	z-index: 999;
+	border-radius: 3px;
 	padding: 8px;
-	background-color: #d9e7ff;
+	background-color: transparent;
+	border: 1px solid black;
 	position: absolute;
 	bottom: 0%;
 	left: 1vw;
@@ -201,6 +255,7 @@ a {
 }
 
 .read:hover {
+	border-color: transparent;
 	background-color: transparent;
 	text-decoration: none;
 
@@ -214,7 +269,7 @@ a {
 }
 
 .aboutcontainer {
-	background: rgba(255, 255, 255, 0.2);
+	background: rgba(255, 255, 255, 0.5);
 	max-height: 95vh !important;
 	padding: 2%;
 	position: absolute;
@@ -223,58 +278,21 @@ a {
 	width: 87vw;
 	font-size: 30;
 	z-index: 999;
-}
-
-
-.search {
-	z-index: 999 !important;
-	background-color: #f7f95d;
-	border-radius: 1px;
-	padding: 1%;
-	position: absolute;
-	top: 110vh;
-	left: .5vw;
-	width: 12vw;
-	height: 4.5vh;
-	outline: none;
-}
-
-.only {
-	border-radius: 50%;
-	height: 70px;
-	width:	70px;
-	font-size: 14;
-	z-index: 999;
-	cursor: pointer;
-	background-color: #feffbb;
-	padding: 1%;
-	position: absolute;
-	top: 118vh;
-	left: .5vw;
-	-webkit-transition: box-shadow .3s linear;
-  	-moz-transition: box-shadow .3s linear;
-  	-o-transition: box-shadow .3s linear;
-  	transition: box-shadow .3s linear;
-}
-
-.only > p {
-	position: absolute;
-	top: 16.5px;
-	left: 25.5px;
+	border-radius: 3px;
 }
 
 .card {
 	color: black;
 	border-radius: 1px;
 	margin-bottom: 2%;
-	background: rgba(255, 255, 255, 0.1);
-	z-index: 999;
+	background: rgba(255, 255, 255, 0.0);
+	z-index: 996;
 	cursor: pointer;
 	margin-right: 1vw;
 	font-size: 18;
 	position: relative;
-	top: 106vh;
-	left: 15vw;
+	top: 115vh;
+	left: 10vw;
  	width: 80vw;
  	height: 150px;
  	overflow: hidden;
@@ -290,11 +308,30 @@ box-shadow: 0px 0px 49px 25px rgba(255, 255, 255,0.5);*/
 }
 
 .article {
+	display: none;
 	font-size: 20;
 	position: relative;
 	left: 1vw;
-	width: 40%;
-	margin-bottom: 35vh;
+	width: 90%;
+	margin-bottom: 20vh;
+}
+
+
+.block-img > img {
+	z-index: 0;
+	position: relative;
+	left: 25%;
+	width: 60%;
+	height: auto;
+	margin-bottom: 10% !important;
+}
+
+.article > div > iframe {
+	position: relative;
+	left: 55%;
+	margin-top: 10%;
+	transform:translate(-50%,0%);
+  -webkit-transform:translate(-50%,0%);
 }
 
 .title {
@@ -312,12 +349,12 @@ box-shadow: 0px 0px 49px 25px rgba(255, 255, 255,0.5);*/
 
 
 .recipearea {
+	border-radius: 3px;
 	display: none;
 	background: rgba(255, 255, 255, 0.55);
 	position: relative;
 	z-index: 999;
 	padding: 3%;
-	border-radius: 1px;
 	width: 92%;
 	left: 1%;
 	column-count:2;
@@ -333,21 +370,6 @@ box-shadow: 0px 0px 49px 25px rgba(255, 255, 255,0.5);*/
 	font-size: 20;
 }
 
-.keywords > p {
-	position: relative;
-	display: inline;
-	float: left;
-	font-size: 20;
-}
-
-.keyword {
-	top: 0;
-	display: inline;
-	float: left;
-	margin-top: 0;
-	margin-left: 10px !important;
-}
-
 mark {
 	z-index: 999 !important;
 	padding: 3px;
@@ -357,48 +379,6 @@ mark {
   -webkit-box-shadow: 0px 7px 15px 0px rgba(0,0,0,0.1);
 -moz-box-shadow: 0px 7px 15px 0px rgba(0,0,0,0.1);
 box-shadow: 0px 7px 15px 0px rgba(0,0,0,0.1);
-}
-
-.imagezone {
-	max-height: 33vh;
-}
-
-
-.imagezone > img {
-	display: none;
-	position: absolute;
-	top: 5%;
-	right: 0vw !important;
-	width: auto;
-	height: 90%;
-	z-index: 990;
-	margin-bottom: 30vh;
-}
-
-.recipecardarea {
-	cursor: default;
-	display: none;
-	width: 49vw;
-	position: absolute;
-	top: 101vh;
-	left: 15vw;
-	padding-bottom: 5vh;
-}
-
-.just {
-	background: rgba(255, 255, 255, 0.04);
-	padding-bottom: 50px;
-	margin-top: 0;
-	height: auto;
-	top: 0;
-	padding: 2%;
-	position: relative;
-	display: inline-block;
-	float: top;
-    margin-bottom: 2vh !important;
-    width: 100%;
-    cursor: pointer;
-
 }
 
 form,input {
@@ -423,36 +403,9 @@ form:focus,input:focus {
 	box-shadow: none;
   }
 
-.only:hover {
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-}
-
-
-.clicked {
-	background-color: #ffe36d;
-	color: black;
-	-webkit-transition: all .3s linear;
-  	-moz-transition: all .3s linear;
-  	-o-transition: all .3s linear;
-  	transition: all .3s linear;
-}
-
-
-.active {
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-		-webkit-transition: all .2s linear;
-  	-moz-transition: all .2s linear;
-  	-o-transition: all .2s linear;
-  	transition: all .2s linear;
-}
-
 .print {
 	background-color: #6aa1ff;
-	border-radius: 1px;
+	border-radius: 3px;
 	padding: 4px;
 	font-size: 20;
 	position: absolute;
@@ -484,41 +437,40 @@ form:focus,input:focus {
 
 
 @media screen and (max-width: 736px){ 
+
+			.topbar {
+				position: absolute;
+				height: 50px;
+			}
 			.strawberry,.spinach,.banana,.blueberry {
 				width: 60vw;
 			}
 			.recipearea {
-				left: 1vw;
-				width: 90vw;
+				left: 0vw !important;
+				width: 88vw;
 				column-count: 1;
 			}
 
-			.card,.article {
+			.card,iframe {
 				width: 92vw;
 				left: 2vw;
 			}
 
-			.article,.recipearea {
-				display: inline-block;
-				float: top;
+			.article {
+				width: 92%;
 			}
+
 
 			.print {
 				display: none !important;
 			}
 
-			.recipecardarea {
-				column-count: 1;
-			}
-
-			.search,.only {
+			.search,.only,.name,.keywords,.article,.recipearea {
 				display:none;
-			
 			}
 
 			.down {
 			font-size: 20;
-			left: 28vw;
 			}
 
 			.aboutcontainer {
@@ -530,21 +482,15 @@ form:focus,input:focus {
 				font-size: 28;
 			}
 
-			.imagezone > img {
-				position: relative;
-				display: none;
-				float: top;
-				height: 18vh;
-				max-width: 96vw;
-				left: 0vw;
-				top: 0;
-				margin-bottom: 10vh;
-			}
-
 			.date {
 				position: relative;
 				margin-top: 7vh;
 				margin-bottom: 0vh;
+			}
+
+			.block-img > img {
+				left: 0;
+				width: 92%;
 			}
 
 }
