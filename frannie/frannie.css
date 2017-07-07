@@ -203,8 +203,9 @@ body {
 @media screen and (max-width: 736px) {
 
 	.main-carousel {
-		height: 78vh;
-		top: 113vh;
+		background-color: none;
+		height: 80vh;
+		top: 110vh;
 		margin-bottom: 10%;
 	}
 
@@ -213,7 +214,7 @@ body {
 	}
 
 	.carousel-cell {
-		width: 90%;
+		width: 70%;
 		margin-left: 50%;
 		margin-right: 50%;
 	}
@@ -234,8 +235,9 @@ body {
 
 
 	.info {
+		background-color: none;
 		z-index: 998;
-		top: 120vh;
+		top: 130vh;
 	}
 
 
