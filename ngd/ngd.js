@@ -122,7 +122,7 @@ Prismic.Api('https://nicholas-dutton.prismic.io/api', function (err, Api) {
 
         $("body").on("click",".card", function(){
         var height = $(".article",this).height()+$(".recipearea",this).height();
-        var padding = $(window).height()*.5;
+        var padding = $(window).height()*.375;
         console.log(height);
         $(this).css({"height":height+padding});
         $(".article",this).not(".number").show();
