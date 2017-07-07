@@ -85,8 +85,10 @@ p,li,ul {
 	font-weight: 300;
 }
 
-a {
-	color: blue;
+a, a:visited {
+	background-color: #33e57e;
+	text-decoration: underline;
+	color: black;
 }
 
 .topbar {
