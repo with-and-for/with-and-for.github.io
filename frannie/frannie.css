@@ -16,6 +16,7 @@
 html {
 	margin: 0;
 	font-family: 'Yantramanav', sans-serif;
+	letter-spacing: .25px;
 }
 
 body {
@@ -227,6 +228,8 @@ body {
 	}
 
 	.up {
+		position: absolute;
+		display: inline;
 		top: 118%;
 	}
 
@@ -243,7 +246,7 @@ body {
 
 
 	.previous,.next {
-        display: none;
+        display: none !important;
 	}
 
 	.about {
@@ -254,12 +257,13 @@ body {
 	.info {
 		background-color: none;
 		z-index: 998;
-		top: 130vh;
+		top: 120vh;
+
 	}
 
 	.titles {
-		width: 65vw;
-		left: 17.5vw;
+		width: 40vw;
+		left: 30vw;
 	}
 
 
