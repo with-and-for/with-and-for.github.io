@@ -27,10 +27,11 @@ body {
 }
 
 .up {
+	display: none;
 	z-index: 999;
-	position: absolute;
+	position: fixed;
 	left: 3.5vw;
-	top: 115%;
+	top: 0;
 	cursor: pointer;
 	font-size: 20;
 }
@@ -85,11 +86,12 @@ body {
 	position: absolute;
 	background-color: none;
 	color: black;
-	width: 100vw;
+	left: 20vw;
 	height: 100vh;
+	width: 10vw;
+	left: 45vw;
 	text-align: center;
 	top: 0;
-	left: 0;
 	font-size: 16;
 }
 
@@ -108,16 +110,17 @@ body {
 }
 
 .title {
-	margin-top: 0;
+	margin: 0;
 	padding: 20px;
-	margin-bottom: 2vh;
 }
 
 .title:hover {
-	background-color: #fcffee;
+	background-color: white !important;
 }
 
 .clicked {
+	pointer-events: none !important;
+	text-align: center;
 	margin-top: 0 !important;
 	background-color: #fcffee;
 	color: black;
@@ -131,7 +134,7 @@ body {
 }
 
 .clicked:hover {
-
+	pointer-events: none !important;
 	color: black;
 }
 
@@ -238,6 +241,11 @@ body {
 		background-color: none;
 		z-index: 998;
 		top: 130vh;
+	}
+
+	.titles {
+		width: 65vw;
+		left: 17.5vw;
 	}
 
 

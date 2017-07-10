@@ -21,6 +21,7 @@ Prismic.Api('https://frannielogan.prismic.io/api', function (err, Api) {
         year = results[i].getStructuredText("project.year").asText();
         desc = results[i].getStructuredText("project.description").asHtml();
         images = results[i].getGroup("project.images").asHtml();
+        color = results[i].getColor("project.title_color");
 
         var titleP = $("<p class='title'></p>");
         var infoP = $("<p class='info'></p>");
@@ -38,7 +39,7 @@ Prismic.Api('https://frannielogan.prismic.io/api', function (err, Api) {
 
         // append to both //
 
-        $(titleP).attr("target",i+1).append(numberP).appendTo(titles,project);
+        $(titleP).css("background-color",color).attr("target",i+1).append(numberP).appendTo(titles,project);
 
        	
       
@@ -73,6 +74,7 @@ Prismic.Api('https://frannielogan.prismic.io/api', function (err, Api) {
         $(".info").show();
         setTimeout(function(){
           $(self).clone(true).addClass("clicked").appendTo("body");
+          $(".up").show();
         },450);
       });
 
@@ -94,21 +96,24 @@ Prismic.Api('https://frannielogan.prismic.io/api', function (err, Api) {
         clicked = 1;
       });
 
+    
 
-      $("html,body").bind("mousewheel", function() {
-        if (clicked === 0) {
-          return false;
-        } else {
-          return true;
-        }
-      });
+
+      // $("html,body").bind("mousewheel", function() {
+      //   if (clicked === 0) {
+      //     return false;
+      //   } else {
+      //     return true;
+      //   }
+      // });
 
       $(window).scroll(function(){
         var height = $(window).height();
         if ($(window).scrollTop() > height) {
-          
+          $(".up").show();
         } else {
           $(".clicked").remove();
+          $(".up").hide();
         }
       })
 
