@@ -15,7 +15,7 @@
 
 html {
 	margin: 0;
-	font-family: 'Overpass', sans-serif;
+	font-family: 'Yantramanav', sans-serif;
 }
 
 body {
@@ -27,16 +27,23 @@ body {
 }
 
 .up {
+	background-color: none;
+	padding: 1%;
 	display: none;
 	z-index: 999;
 	position: fixed;
-	left: 3.5vw;
-	top: 0;
+	left: 4vw;
+	top: 2%;
+	width: 15px;
 	cursor: pointer;
 	font-size: 20;
 }
 
 .previous,.next {
+	fill: red;
+	width: 70px;
+	height: auto;
+	padding: .5%;
 	cursor: pointer;
 	z-index: 999;
 	position: absolute;
@@ -65,7 +72,7 @@ body {
 	z-index: 999;
 	position: absolute;
 	left: 4vw;
-	top: 205vh;
+	top: 206vh;
 }
 
 .project {
@@ -112,22 +119,30 @@ body {
 .title {
 	margin: 0;
 	padding: 20px;
+	  -webkit-transition: all .15s ease-in-out;
+  -moz-transition: all .15s ease-in-out;
+  -o-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
 }
 
 .title:hover {
-	background-color: white !important;
+	background-color: none !important;
+	margin-top: 8%;
+	margin-bottom: 8%;
 }
 
 .clicked {
+	cursor: none;
 	pointer-events: none !important;
 	text-align: center;
 	margin-top: 0 !important;
-	background-color: #fcffee;
+	background-color: transparent !important;
 	color: black;
 	position: fixed;
 	top: 0;
+	width: 100%;
 	left: 50%;
-	font-size: 16;
+	font-size: 25;
 	text-decoration: none;
 	transform:translate(-50%,0%);
   -webkit-transform:translate(-50%,0%);
@@ -157,18 +172,17 @@ body {
 	width: auto;
 	float: left;
 	z-index: 999;
-	margin-left: 50%;
-	margin-right: 50%;
+	margin-left: 6%;
+	margin-right: 6%;
 	left: 0;
 	background-color:none;
 }
 
 .carousel-cell > img {
-	position: absolute;
+	position: relative;
 	top: 50%;
-	left: 50%;
-	transform:translate(-50%,-50%);
-  -webkit-transform:translate(-50%,-50%);
+	transform:translate(0%,-50%);
+  -webkit-transform:translate(0%,-50%);
 }
 
 

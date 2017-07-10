@@ -92,11 +92,14 @@ Prismic.Api('https://frannielogan.prismic.io/api', function (err, Api) {
 
       $(".title").click(function(){
         var height = $(window).height();
+        $(".previous,.next").show();
         $("html,body").animate({scrollTop:height},400);
         clicked = 1;
       });
 
-    
+    $(".title:first-child").click(function(){
+      $(".previous,.next").hide();
+    });
 
 
       // $("html,body").bind("mousewheel", function() {
@@ -114,6 +117,7 @@ Prismic.Api('https://frannielogan.prismic.io/api', function (err, Api) {
         } else {
           $(".clicked").remove();
           $(".up").hide();
+          
         }
       })
 
@@ -132,7 +136,7 @@ Prismic.Api('https://frannielogan.prismic.io/api', function (err, Api) {
 
       $(".about").click(function(){
         var height = $(window).height();
-        $("html,body").animate({scrollTop:height*2},500);
+        $("html,body").animate({scrollTop:height+700},500);
       });
 
       $(".up").click(function(){
