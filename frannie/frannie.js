@@ -110,6 +110,15 @@ Prismic.Api('https://frannielogan.prismic.io/api', function (err, Api) {
         }
        });
 
+      $(document).bind("touchmove", function(e) {        
+       if (clicked === 0) {
+          e.preventDefault();
+        } else {
+          return true;
+        }
+       });
+
+
       $(window).scroll(function(){
         var height = $(window).height();
         if ($(window).scrollTop() > height) {
