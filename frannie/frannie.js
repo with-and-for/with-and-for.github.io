@@ -102,13 +102,13 @@ Prismic.Api('https://frannielogan.prismic.io/api', function (err, Api) {
     });
 
 
-      // $("html,body").bind("mousewheel", function() {
-      //   if (clicked === 0) {
-      //     return false;
-      //   } else {
-      //     return true;
-      //   }
-      // });
+      $("html,body").bind("mousewheel", function() {
+       if (clicked === 0) {
+          return false;
+        } else {
+          return true;
+        }
+       });
 
       $(window).scroll(function(){
         var height = $(window).height();
