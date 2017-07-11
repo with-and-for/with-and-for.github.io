@@ -131,6 +131,10 @@ body {
 	margin-bottom: 8%;
 }
 
+.title:first-child:hover {
+	margin-top: 0 !important;
+}
+
 .clicked {
 	cursor: none;
 	pointer-events: none !important;
