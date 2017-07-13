@@ -94,6 +94,7 @@ body {
 }
 
 .post{
+	cursor: pointer;
 	display: flex;
 	position: relative;
 	background-color: white;
