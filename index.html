@@ -210,7 +210,7 @@ $(document).ready(function(){
       // sort projects by hidden number value, largest to smallest //
 
       var ordered = $divs.sort(function (a, b) {
-        return $(a).find(".number").text() < $(b).find(".number").text();
+        return $(b).find(".number").text() - $(a).find(".number").text();
       });
 
       // append reordered divs to project section //
