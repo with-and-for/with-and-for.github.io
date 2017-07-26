@@ -10,6 +10,10 @@
     display: none;
 }
 
+html,body {
+  overflow-x: hidden !important;
+}
+
 html {
 	margin: 0;
 	font-family: 'Roboto', sans-serif;
@@ -17,9 +21,8 @@ html {
 
 body {
 	margin: 0;
-	width: 400vw;
-	height: 100vh;
-  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
 }
 
 .about > p,.exhibition > p,.blog > .post > p {
@@ -62,14 +65,14 @@ a, a:visited {
 }
 
 .about,.exhibition,.blog {
+  display:none;
   position: absolute;
-	z-index: 0;
+	z-index: 998;
 	top: 7.25vh;
-	left: 0vw;
 	font-weight: 300;
 	margin: 0;
 	margin-top: 0;
-	left: 100vw;
+	left: 0vw;
 	width: 100vw;
 	-webkit-transition: all .2s ease-in-out;
   	-moz-transition: all .2s ease-in-out;
@@ -78,7 +81,6 @@ a, a:visited {
 	}
 
 .about {
-  left: 100vw;
   background-color: #c038ff;
   color: white;
 }
@@ -93,7 +95,6 @@ a, a:visited {
 }
 
 .exhibition {
-  left: 200vw;
   background-color: #61d602;
   color: white;
 }
@@ -107,7 +108,6 @@ a, a:visited {
 }
 
 .blog {
-  left: 300vw;
   background-color: #d815a1;
   color: white;
 }
@@ -123,13 +123,13 @@ a, a:visited {
 .titlesection {
   padding-left: 1.5vw;
   border-radius: 2px;
-	 z-index: 999;
-		position: fixed;
-		top: 0;
-		left: 0vw;
-		width: 100vw;
-		height: 7.25vh;
-    background-color: rgba(255, 255, 255, 1);
+	z-index: 999;
+	position: fixed;
+	top: 0;
+	left: 0vw;
+	width: 100vw;
+	height: 7.25vh;
+  background-color: rgba(255, 255, 255, 1);
 	}
 
 .center {

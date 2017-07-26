@@ -184,12 +184,25 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
         },3000);
 
         $(".title").click(function(){
-              var index = $(this).index(".title");
-              var windowWidth = $(window).width();
+              $(window).scrollTop(0);
               $(".title").not(this).removeClass("active");
               $(this).addClass("active");
 
-              $("body").animate({scrollLeft: (windowWidth*index)},10).animate({scrollTop:0},10);
+              if ($(".title:first-child").hasClass("active")) {
+                    $(".about,.exhibition,.blog").hide();
+                   }
+              if ($("#about").hasClass("active")) {
+                  $(".exhibition,.blog").hide();
+                  $(".about").show();
+                 }
+              if ($("#exhibition").hasClass("active")) {
+                    $(".about,.blog").hide();
+                    $(".exhibition").show();
+                    }
+              if ($("#blog").hasClass("active")) {
+                    $(".about,.exhibition").hide();
+                    $(".blog").show();
+                  }
         });
 
         setTimeout(function(){
