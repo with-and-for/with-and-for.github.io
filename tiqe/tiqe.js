@@ -26,6 +26,34 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
 
   }, "MC5XWERqSWlBQUFFUElzeWtp.OGjvv70O77-9TQbvv73vv73vv73vv73vv73vv73vv73vv707ETVuRe-_vQjvv73vv70j77-9Ju-_vT1SQkE");
 
+// links text //
+
+Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
+    Api.form("everything")
+    .ref(Api.master())
+    .query(Prismic.Predicates.at("document.type", "links"))
+    .submit(function (err, response) {
+      var results = response.results;
+      var body = $("body");
+      var links = $(".links");
+
+      for (var i = 0; i < results.length; i++) {
+
+        title = results[i].getStructuredText("links.links").asHtml();
+        link = results[i].getStructuredText("links.links1").asHtml();
+
+        var infoD = $("<div class=info></div>");
+
+       	infoD.append(link);
+        links.append(title,infoD);
+
+      }
+
+    });
+
+  }, "MC5XWERqSWlBQUFFUElzeWtp.OGjvv70O77-9TQbvv73vv73vv73vv73vv73vv73vv73vv707ETVuRe-_vQjvv73vv70j77-9Ju-_vT1SQkE");
+
+
 // open call text //
 
 Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
@@ -65,6 +93,7 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
       var about = $(".about");
 
       for (var i = 0; i < results.length; i++) {
+        aboutcolor = results[i].getColor("about_page.color");
         title = results[i].getStructuredText("about_page.title").asHtml();
         description = results[i].getStructuredText("about_page.description").asHtml();
 
@@ -72,6 +101,13 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
         body.append(about);
 
       }
+      $("#about,.about").css("color",aboutcolor);
+
+      // $("#about").mouseover(function(){
+      //   $(this).css({"color":aboutcolor,"background-color":"white"});
+      // }).mouseout(function(){
+      //   $(this).css({"color":"white","background-color":aboutcolor});
+      // });
 
     });
 
@@ -90,14 +126,29 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
 
       for (var i = 0; i < results.length; i++) {
 
+        ecolor = results[i].getColor("exhibition_page.color");
         title = results[i].getStructuredText("exhibition_page.title").asHtml();
+        etitle = results[i].getStructuredText("exhibition_page.exhibition_title").asHtml();
+        tiqe = results[i].getStructuredText("exhibition_page.tiqe").asHtml();
+        materials = results[i].getStructuredText("exhibition_page.materials").asHtml();
+        year = results[i].getStructuredText("exhibition_page.year").asHtml();
         description = results[i].getStructuredText("exhibition_page.description").asHtml();
         images = results[i].getGroup("exhibition_page.images").asHtml();
 
-  		  exhibition.append(title,description,images);
+
+                $(etitle,tiqe,materials,year).addClass("these");
+  		  exhibition.append(title,etitle,tiqe,materials,year,description,images);
         body.append(exhibition);
 
       }
+
+      $("#exhibition,.exhibition").css("color",ecolor);
+
+      // $("#exhibition").mouseover(function(){
+      //   $(this).css({"color":ecolor,"background-color":"white"});
+      // }).mouseout(function(){
+      //   $(this).css({"color":"white","background-color":ecolor});
+      // });
 
 
     });
@@ -114,22 +165,45 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
       var results = response.results;
       var body = $("body");
       var blog = $(".blog");
+      var hello;
+      var bcolors = [];
 
       for (var i = 0; i < results.length; i++) {
 
+        bcolor = results[i].getColor("blog_post.color");
         order = results[i].getNumber("blog_post.order");
         title = results[i].getStructuredText("blog_post.title").asHtml();
         description = results[i].getStructuredText("blog_post.description").asHtml();
 
-  		var blogD = $("<div class='post'></div>");
-  		var number = $("<p style='display:none' class='order'></p>");
+    		var blogD = $("<div class='post'></div>");
+    		var number = $("<p style='display:none' class='order'></p>");
 
-  		number.append(order);
-  		blogD.append(number,title,description)
-  		blog.append(blogD);
+        bcolors.push(bcolor);
+
+    		number.append(order);
+    		blogD.append(number,title,description)
+    		blog.append(blogD);
         body.append(blog);
 
       }
+
+      var hello = bcolors[0];
+      console.log(hello);
+
+      $(".blog,#blog").css("color",hello);
+
+      // $("#blog").mouseover(function(){
+      //   $(this).css({"color":hello,"background-color":"white"});
+      // }).mouseout(function(){
+      //   $(this).css({"color":"white","background-color":hello});
+      // });
+
+
+
+
+
+
+
 
        var $divs = $("div.post");
       var ordered = $divs.sort(function (a, b) {
@@ -158,7 +232,7 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
       $("#blog").fadeIn(400).addClass("animation");
     },1900);
     setTimeout(function(){
-      $(".opencall").fadeIn(400);
+      $(".opencall,.links").fadeIn(400);
     },3000);
 
 
@@ -180,7 +254,7 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
           $("#blog").fadeIn(400).addClass("animation");
         },1900);
         setTimeout(function(){
-          $(".opencall").fadeIn(400);
+          $(".opencall,.links").fadeIn(400);
         },3000);
 
         $(".title").click(function(){
@@ -205,34 +279,6 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
                   }
         });
 
-        setTimeout(function(){
-
-          // stalling on getting container heights //
-
-        $(window).scroll(function() {
-          var aboutHeight= $(".about").height()-$(window).height()+50;
-          var exhibitionHeight= $(".exhibition").height()-$(window).height()+100;
-          var blogHeight= $(".blog").height()-$(window).height()+50;
-          console.log(aboutHeight,exhibitionHeight,blogHeight);
-        if ($(".title:first-child").hasClass("active") && $(window).scrollTop() >= 0) {
-              event.preventDefault();
-              $(window).scrollTop(0);
-             }
-        if ($("#about").hasClass("active") && $(window).scrollTop() >= aboutHeight) {
-            event.preventDefault();
-            $(window).scrollTop(aboutHeight);
-           }
-        if ($("#exhibition").hasClass("active") && $(window).scrollTop() >= exhibitionHeight) {
-               event.preventDefault();
-               $(window).scrollTop(exhibitionHeight);
-              }
-        if ($("#blog").hasClass("active") && $(window).scrollTop() >= blogHeight) {
-              event.preventDefault();
-              $(window).scrollTop(blogHeight);
-            }
-         });
-
-       },200);
 
 
      }

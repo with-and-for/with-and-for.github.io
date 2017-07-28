@@ -10,20 +10,18 @@
     display: none;
 }
 
-html,body {
-  overflow-x: hidden !important;
-}
-
-html {
-	margin: 0;
+html{
+  margin:0;
 	font-family: 'Roboto', sans-serif;
 }
 
 body {
-	margin: 0;
-  width: 100vw;
-  height: 100vh;
+  margin: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: auto;
 }
+
 
 .about > p,.exhibition > p,.blog > .post > p {
 	font-size: 40;
@@ -44,11 +42,16 @@ ol, li {
 
 a, a:visited {
 	color: black;
+  line-height: 1;
   white-space: pre-wrap;
   white-space: -moz-pre-wrap;
   white-space: -pre-wrap;
   white-space: -o-pre-wrap;
   word-wrap: break-word;
+}
+
+a:hover {
+  color: #900aff;
 }
 
 .blog > .post > .block-img > img {
@@ -64,7 +67,9 @@ a, a:visited {
 	height: auto;
 }
 
+
 .about,.exhibition,.blog {
+  background-color: rgba(255,255,255,.8);
   display:none;
   position: absolute;
 	z-index: 998;
@@ -80,56 +85,47 @@ a, a:visited {
   	transition: all .2s ease-in-out;
 	}
 
-.about {
-  background-color: #c038ff;
-  color: white;
-}
-
-.about > h1 {
+.about > h1:first-child, .exhibition > h1:first-child, .blog > h1:first-child {
   position: relative;
-  background-color: none;
-  left: 10vw;
-  top: 6vh;
   font-weight: 300;
   font-size: 25;
-}
-
-.exhibition {
-  background-color: #61d602;
-  color: white;
+  left: 10vw;
+  top: 6vh;
+  margin-bottom: 10vh;
 }
 
 .exhibition > h1 {
   position: relative;
-  font-weight: 300;
+  font-weight: 900;
   font-size: 25;
   left: 10vw;
   top: 6vh;
+  width: 50vw;
 }
 
-.blog {
-  background-color: #d815a1;
-  color: white;
+.these {
+font-size: 40 !important;
 }
+
 
 .blog > .post > h1 {
   position: relative;
   left: 10vw;
   top: 6vh;
-  font-weight: 300 !important;
+  font-weight: 900;
   font-size: 25;
 }
 
 .titlesection {
+  margin-left: 1vw;
   padding-left: 1.5vw;
-  border-radius: 2px;
 	z-index: 999;
 	position: fixed;
 	top: 0;
-	left: 0vw;
+	left: -1vw;
 	width: 100vw;
 	height: 7.25vh;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(255,255,255,0);
 	}
 
 .center {
@@ -153,25 +149,18 @@ a, a:visited {
 	margin-right: 2.2vw;
 }
 
+.title:hover {
+  text-decoration: underline;
+}
+
+.title:first-child:hover {
+  text-decoration: none;
+}
+
 #about,#exhibition,#blog {
   padding-left: 1vw;
   padding-right: 1vw;
-}
-
-#about {
-  background-color: #c038ff;
-  color: white;
-}
-
-#about:hover {
-  background-color: transparent;
-  border: none;
-  color: #c038ff;
-}
-
-#exhibition {
-  background-color: #61d602;
-  color: white;
+  background-color: rgba(255,255,255,.95);
 }
 
 .animation {
@@ -179,74 +168,64 @@ a, a:visited {
   animation: smallbig 10s linear infinite alternate;
 }
 
-#exhibition:hover {
-  background-color: transparent;
-  border: none;
-  color: #61d602;
-}
-
-#blog {
-  background-color: #d815a1;
-  color: white;
-}
-
-#blog:hover {
-  background-color: transparent;
-  border: none;
-  color: #d815a1;
-}
-
-#open:hover {
-  background-color: transparent;
-  border: none;
-  color: #6d1c04;
-}
-
 .title:first-child{
+  margin: 0;
   padding: .25vw;
   font-weight: 900;
   color: black;
-	left: 1vw;
   display: inline;
+  cursor: pointer;
+  margin-right:2vw;
 }
 
-.title:first-child:hover{
-  border: none;
-}
 
 .home {
+  background-color: red;
   z-index: -1;
   display: none;
-  position: absolute;
-  left:2.5vw;
-  width: 65vw;
-  max-height: 88vh;
+  position: fixed;
+  left:2vw;
+  width: auto;
+  max-height: 80vh;
   bottom: 5vh !important;
-  margin-bottom: 0;
-  transform:translate(0%,0%);
-  -webkit-transform:translate(0%,0%);
 }
 
 .home > section > img {
-  height: auto;
-  width: 65vw;
+  height: 80vh;
+  width: auto;
+  bottom: 5vh !important;
+}
+
+.links {
+  display: none;
+  border-radius: 2px;
+  position: fixed;
+  top: 17.25vh;
+  right: 1vw;
+  width: 22vw;
+  height: 30vh;
+  font-weight: 300;
+  background-color: transparent;
+  border: none;
+  color: #00d651;
 }
 
 .opencall {
   display: none;
   border-radius: 2px;
-  position: absolute;
-  bottom: 5vh;
-  left: 73vw;
-  width: 23vw;
-  height: auto;
+  position: fixed;
+  bottom: 7vh;
+  right: 1vw;
+  width: 22vw;
+  height: 30vh;
   font-weight: 300;
   background-color: transparent;
-  border: 1px solid #752402;
+  border: none;
   color: #752402;
+  overflow: scroll;
 }
-.opencall > h1 {
-  font-weight: 300;
+.opencall > h1,.links > h1 {
+  font-weight: 900;
   padding: .25vw;
   border-radius: 2px;
   position: relative;
@@ -256,7 +235,12 @@ a, a:visited {
   font-size: 20;
 }
 
-.info > p{
+ul {
+  margin: 0;
+  margin-left: 0;
+}
+
+.info > p,.links > ul{
   margin: 0;
   margin-right: 6%;
   margin-top: 0;
