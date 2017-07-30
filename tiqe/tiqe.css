@@ -22,15 +22,26 @@ body {
 	overflow: auto;
 }
 
-
-.about > p,.exhibition > p,.blog > .post > p,.exhibition > .projectpost > p,.exhibition > .projectpost > ul li {
-	font-size: 35 !important;
+.about > p {
+  font-size: 35 !important;
 	margin: 10vw;
   width: 60vw;
 }
 
+
+.exhibition > p,.blog > .post > p,.exhibition > .projectpost > p,.exhibition > .projectpost > ul li {
+	font-size: 35 !important;
+	margin: 10vw;
+  width: 60vw;
+  margin-bottom: -10vh;
+}
+
 .exhibition > .projectpost > ul li  {
   margin-bottom: -10vh;
+}
+
+.exhibition > .projectpost {
+  margin-bottom: 30vh !important;
 }
 
 .links > ul {
