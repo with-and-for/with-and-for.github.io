@@ -22,15 +22,25 @@ body {
 	overflow: auto;
 }
 
+.insta {
+  text-decoration: none;
+  padding-bottom: 2vh;
+  position: fixed;
+  right: 5vw;
+  font-size: 20;
+  bottom: 5vh;
+  width: 19vw;
+}
+
 #mc_embed_signup  {
-  margin-left: 1%;
+  padding: .25%;
   background-color: rgba(255,255,255,.9) !important;
   z-index: 997;
   width: 19vw;
   background:#fff;
   position: fixed;
   right: 5vw;
-  top: 14vh;
+  top: 52vh;
   font-family: 'Roboto', sans-serif;
   font-weight: 300 !important;
 }
@@ -41,7 +51,7 @@ body {
 }
 
 #mc-embedded-subscribe {
-  background-color: transparent;
+  background-color: #e6d8ff;
   position: relative;
   left: 0;
   margin-top: 2vh;
@@ -405,7 +415,6 @@ font-size: 40 !important;
 
 .links {
   padding-left: 3vw;
-  border-left: 1px solid black;
   display: none;
   position: absolute;
   top: 9vh;
@@ -414,7 +423,14 @@ font-size: 40 !important;
   height: 30vh;
   font-weight: 300;
   background-color: transparent;
-  color: #00d651;
+  color: black;
+}
+
+.links > .info > p > img {
+  position: relative;
+  width: 70%;
+  height: auto;
+  margin-bottom: -3vh !important;
 }
 
 .open{
@@ -478,7 +494,7 @@ font-size: 40 !important;
   cursor: pointer;
   display: none;
   position: fixed;
-  bottom: 5vh;
+  top: 17vh;
   right: 2vw;
   width: 22vw;
   height: 30vh;

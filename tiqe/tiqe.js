@@ -33,6 +33,10 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
           $(".home").fadeIn(400);
         },100);
 
+        $(window).resize(function(){
+          $(".home").scrollTop(0);
+        });
+
         setInterval(function(){
               var top = $(".home").scrollTop();
               if($(".home").scrollTop() > (inheight-height)-10) {
@@ -209,11 +213,6 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
       }).mouseout(function(){
         $(this).css({"border-left":"none","margin-left":"0px"});
       });
-
-
-
-
-      // var images = $(".exhibitionimages").children("section").addClass("jeez");
 
       var lengths = [];
       $('.exhibitionimages').each(function() {
