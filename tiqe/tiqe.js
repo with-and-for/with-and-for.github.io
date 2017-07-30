@@ -27,14 +27,6 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
         var height = $(".home").outerHeight();
         var inheight = $(".home").innerHeight()*$(".home > section").length;
 
-        $(window).resize(function(){
-          setTimeout(function(){
-            var height = $(".home").outerHeight();
-            var inheight = $(".home").innerHeight()*$(".home > section").length;
-          },200);
-          console.log(height,inheight);
-        });
-
         $(".uphome,.downhome").hide();
 
         setTimeout(function(){
@@ -43,11 +35,9 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
 
         setInterval(function(){
               var top = $(".home").scrollTop();
-              console.log(top)
-
               if($(".home").scrollTop() > (inheight-height)-10) {
                 setTimeout(function(){
-                  $(".home").animate({scrollTop:0},2000);
+                  $(".home").animate({scrollTop:0},1);
                   count = 0;
                 },1000);
               } else {
@@ -194,7 +184,7 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
 
         number.append(order);
         eImages.append(images);
-        projectD.append(number,up,down,eImages,etitle,tiqe,materials,year,description)
+        projectD.append(number,etitle,tiqe,materials,year,eImages,description)
   		  exhibition.append(projectD);
 
 
@@ -209,64 +199,46 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
       $(ordered).appendTo(".exhibition");
 
       var latestColor = ecolors[0];
-      console.log(ecolors);
-      console.log(latestColor);
-
-
       var click = 0;
 
       $("#exhibition,.exhibition").css("color",latestColor);
       $(".up,.down").css("background-color",latestColor);
 
-      $(".title,#exhibition").click(function(){
-        $(".exhibitionimages").scrollTop(0);
-        click = 0;
-      })
-
-      var height = $(".exhibitionimages").height();
-      var length = $(".projectpost").each(function(){
-        $(".exhibitionimages").length;
+      $(".projectpost > .exhibitionimages").mouseover(function(){
+        $(this).css({"border-left":"10px solid"+latestColor,"margin-left":"-10px"});
+      }).mouseout(function(){
+        $(this).css({"border-left":"none","margin-left":"0px"});
       });
-      console.log(length);
-      console.log(height);
+
+
+
+
+      // var images = $(".exhibitionimages").children("section").addClass("jeez");
+
       var lengths = [];
-
-      // var length = $(".projectpost > .exhibitionimages img").length;
-
-      $(".projectpost").each(function(){
-        var length = $(".exhibition img").length;
-        lengths.push(length);
+      $('.exhibitionimages').each(function() {
+          lengths.push($(this).children("section").length);
       });
 
+      var count = 1;
       console.log(lengths);
 
-      $(".projectpost > .down").click(function(){
-        click++;
-        $(".projectpost > .exhibitionimages").animate({scrollTop:height*click},700);
-        if (click >= length) {
-          click = length;
-          console.log(click);
-        }
-      });
+      $(".exhibitionimages").click(function(){
+        var index = $(".exhibitionimages").index(this);
+        var thisLength = lengths[index];
+        var eHeight = $(".exhibitionimages").outerHeight();
+        var eInheight = $(".exhibitionimages").innerHeight()*thisLength;
 
-      $(".projectpost > .up").click(function(){
-        click = click - 1;
-        $(".projectpost > .exhibitionimages").animate({scrollTop:height*click},400);
-        if (click <= 0) {
-          click = 0;
-          console.log("zero!");
-        }
-        if (click >= length) {
-          click = click - 1;
-          console.log(click);
-        }
-      });
+              var top = $(".exhibitionimages").scrollTop();
+              if($(".exhibitionimages").scrollTop() > (eInheight-eHeight)-10) {
+                  $(".exhibitionimages").animate({scrollTop:0},1);
+                  count = 1;
+              } else {
+                $(".exhibitionimages").animate({scrollTop:(eHeight*count)},1);
+                count ++;
+              }
 
-      // $("#exhibition").mouseover(function(){
-      //   $(this).css({"color":ecolor,"background-color":"white"});
-      // }).mouseout(function(){
-      //   $(this).css({"color":"white","background-color":ecolor});
-      // });
+      });
 
 
     });
@@ -306,22 +278,8 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
       }
 
       var hello = bcolors[0];
-      console.log(hello);
 
       $(".blog,#blog").css("color",hello);
-
-      // $("#blog").mouseover(function(){
-      //   $(this).css({"color":hello,"background-color":"white"});
-      // }).mouseout(function(){
-      //   $(this).css({"color":"white","background-color":hello});
-      // });
-
-
-
-
-
-
-
 
        var $divs = $("div.post");
       var ordered = $divs.sort(function (a, b) {
