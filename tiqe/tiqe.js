@@ -202,8 +202,9 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
 
       $(ordered).appendTo(".exhibition");
 
-      var latestColor = ecolors[0];
+      var latestColor = ecolors[ecolors.length-1];
       var click = 0;
+      console.log(ecolors);
 
       $("#exhibition,.exhibition").css("color",latestColor);
       $(".up,.down").css("background-color",latestColor);
@@ -291,10 +292,15 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
 
   }, "MC5XWERqSWlBQUFFUElzeWtp.OGjvv70O77-9TQbvv73vv73vv73vv73vv73vv73vv73vv707ETVuRe-_vQjvv73vv70j77-9Ju-_vT1SQkE");
 
+
+
+
+
+
   if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
 
     $(".title:first-child").addClass("active");
-    $("#about,#exhibition,#blog,.opencall,.links").fadeIn(100);
+    $("#about,#exhibition,#blog,.opencall,.links").show();
 
 
     $(".title").click(function(){
@@ -322,6 +328,21 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
               }
     });
 
+    var Input = $('input[name=EMAIL]');
+    var default_value = Input.val();
+
+    $(Input).focus(function() {
+        if($(this).val() == default_value)
+        {
+             $(this).val("");
+        }
+    }).blur(function(){
+        if($(this).val().length == 0) /*Small update*/
+        {
+            $(this).val(default_value);
+        }
+    });
+
 
 
 
@@ -329,9 +350,28 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
 
   } else {
 
-        $(".title:first-child").addClass("active");
-        $("#about,#exhibition,#blog,.opencall,.links").fadeIn(100);
+    $("#about,#exhibition,#blog,.opencall,.links").show();
 
+
+    var Input = $('input[name=EMAIL]');
+    var default_value = Input.val();
+
+    $(Input).focus(function() {
+        if($(this).val() == default_value)
+        {
+             $(this).val("");
+        }
+    }).blur(function(){
+        if($(this).val().length == 0) /*Small update*/
+        {
+            $(this).val(default_value);
+        }
+    });
+
+
+        $("div[data-oembed]").fitVids().addClass("hello?");
+
+        $(".title:first-child").addClass("active");
 
         $(".title").click(function(){
               $(".opencall").removeClass("bigger");
@@ -365,6 +405,8 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
                     $("#blog").css("text-decoration","underline");
                   }
         });
+
+
 
 
 
