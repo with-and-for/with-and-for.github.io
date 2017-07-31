@@ -586,7 +586,7 @@ font-size: 40 !important;
     width: auto;
   }
 
-  #mc_embed_signup_scroll > h2,#mail {
+  #mc_embed_signup_scroll > p,#mail {
     display:none;
     font-weight: 300 !important;
    }
