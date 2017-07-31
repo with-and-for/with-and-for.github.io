@@ -138,8 +138,13 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
         aboutcolor = results[i].getColor("about_page.color");
         title = results[i].getStructuredText("about_page.title").asHtml();
         description = results[i].getStructuredText("about_page.description").asHtml();
+        groupName = results[i].getStructuredText("about_page.group_name").asHtml();
+        people = results[i].getGroup("about_page.people").asHtml();
 
-       	about.append(description);
+        var peopleP = $("<div class='people'></div>");
+
+        peopleP.append(groupName,people);
+       	about.append(description,peopleP);
         body.append(about);
 
       }

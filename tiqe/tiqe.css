@@ -50,7 +50,7 @@ body {
   font-weight: 300 !important;
 }
 
-#mc_embed_signup h2 {
+#mc_embed_signup p {
   position: relative;
   top: -1.35vh;
   left:
@@ -95,6 +95,8 @@ input, textarea,input:focus,textarea:focus {
   border: none;
   border-bottom: 2px solid black;
   outline: none !important;
+  border-radius: 0 !important;
+  -webkit-appearance: none !important;
 }
 
 .about > p {
@@ -235,6 +237,35 @@ iframe {
   top: 6vh;
   margin-bottom: 10vh;
   margin-top: 0;
+}
+
+.people {
+  position: relative;
+  left: 10vw;
+  font-size: 28;
+}
+
+.people > h1 {
+  font-weight: 300 !important;
+  margin-bottom: 15vh !important;
+  font-size: 28 !important;
+}
+
+.people > section > img {
+  width: 20vw;
+  height: auto;
+}
+
+.people > section > p:last-child {
+  position: relative;
+  width: 60vw;
+  margin-bottom: 10vh;
+}
+
+.people > section > p:first-child {
+  position: relative;
+  width: 50vw;
+  margin-bottom: -3vh;
 }
 
 .exhibition > h1 {
@@ -526,7 +557,7 @@ font-size: 40 !important;
   #mc_embed_signup {
     height: 5.25vh;
     left: 24vw;
-    width: 320px !important;
+    width: 335px !important;
   }
 
   input {
@@ -574,6 +605,11 @@ font-size: 40 !important;
 @media screen and (max-width: 750px) {
   body {
     width: 100vw !important;
+  }
+
+  .titlesection {
+    top: 0;
+    background-color: rgba(255,255,255,.9);
   }
 
   .about > div > iframe {
@@ -643,7 +679,7 @@ font-size: 40 !important;
   }
 
   .home {
-    height: 30vh;
+    height: 35vh;
     width: 95vw;
   }
 
