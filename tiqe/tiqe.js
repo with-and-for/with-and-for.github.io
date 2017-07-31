@@ -304,26 +304,34 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
 
 
     $(".title").click(function(){
+          $(".opencall").removeClass("bigger");
+          $(".opencall > h1,.info > p").removeClass("bigfont");
+          $(".close").hide();
+          $(".open").show();
           $(window).scrollTop(0);
           $(".title").not(this).removeClass("active");
           $(this).addClass("active");
 
           if ($(".title:first-child").hasClass("active")) {
                 $(".about,.exhibition,.blog").hide();
+                $("#about,#exhibition,#blog").css("text-decoration","none");
                }
           if ($("#about").hasClass("active")) {
               $(".exhibition,.blog").hide();
               $(".about").show();
+              $("#exhibition,#blog").css("text-decoration","none");
               $("#about").css("text-decoration","underline");
              }
           if ($("#exhibition").hasClass("active")) {
                 $(".about,.blog").hide();
                 $(".exhibition").show();
+                $("#about,#blog").css("text-decoration","none");
                 $("#exhibition").css("text-decoration","underline");
                 }
           if ($("#blog").hasClass("active")) {
                 $(".about,.exhibition").hide();
                 $(".blog").show();
+                $("#about,#exhibition").css("text-decoration","none");
                 $("#blog").css("text-decoration","underline");
               }
     });

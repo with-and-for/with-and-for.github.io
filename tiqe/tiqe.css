@@ -66,6 +66,7 @@ body {
   cursor: pointer;
   border: none;
   font-style: none !important;
+  -webkit-appearance: none !important;
 }
 
 .mce_inline_error,#mce-error-response,#mce-success-response {
@@ -595,7 +596,7 @@ font-size: 40 !important;
     left: 2vw;
     position: relative;
     float: top;
-    margin-bottom: 6vh;
+    margin-bottom: 4vh;
   }
 
   .opencall {
@@ -642,7 +643,7 @@ font-size: 40 !important;
   }
 
   .home {
-    height: 40vh;
+    height: 30vh;
     width: 95vw;
   }
 
