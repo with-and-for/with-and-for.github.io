@@ -358,6 +358,14 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
         }
     });
 
+    $(window).bind("orientationchange", function(){
+    var orientation = window.orientation;
+    var new_orientation = (orientation) ? 0 : 180 + orientation;
+    $('body').css({
+        "-webkit-transform": "rotate(" + new_orientation + "deg)"
+    });
+});
+
 
 
 
