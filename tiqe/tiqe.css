@@ -230,6 +230,7 @@ iframe {
 	left: 0vw;
 	width: 100vw;
   min-height: 100vh;
+  overflow: scroll;
 	-webkit-transition: all .2s ease-in-out;
   	-moz-transition: all .2s ease-in-out;
   	-o-transition: all .2s ease-in-out;
@@ -745,6 +746,16 @@ font-size: 40 !important;
     float: bottom;
     height: 35vh;
     width: 95vw;
+  }
+
+  .bigger {
+    position: absolute;
+    top: -10vh !important;
+  }
+
+  .bigfont {
+    width: 75vw;
+    font-size: 20;
   }
 
 

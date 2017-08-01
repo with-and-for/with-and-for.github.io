@@ -113,6 +113,7 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
       });
 
       $(".close").click(function(){
+        $(".opencall").scrollTop(0);
         $(".close").hide();
         $(".open").show();
         $(".opencall").removeClass("bigger");
@@ -207,7 +208,7 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
 
       $(ordered).appendTo(".exhibition");
 
-      var latestColor = ecolors[ecolors.length-1];
+      var latestColor = ecolors[0];
       var click = 0;
       console.log(ecolors);
 
@@ -314,6 +315,7 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
           $(".close").hide();
           $(".open").show();
           $(window).scrollTop(0);
+          $(".about,.exhibition,.blog").scrollTop(0);
           $(".title").not(this).removeClass("active");
           $(this).addClass("active");
 
@@ -374,6 +376,7 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
               $(".close").hide();
               $(".open").show();
               $(window).scrollTop(0);
+              $(".about,.exhibition,.blog").scrollTop(0);
               $(".title").not(this).removeClass("active");
               $(this).addClass("active");
 
