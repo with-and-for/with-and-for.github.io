@@ -632,6 +632,10 @@ font-size: 40 !important;
     width: 100vw !important;
   }
 
+  input {
+    width: 40vw;
+  }
+
   .blog > .post > p {
     margin-bottom: auto;
     margin-top: auto;
