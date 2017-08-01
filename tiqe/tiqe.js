@@ -144,7 +144,7 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
         var peopleP = $("<div class='people'></div>");
 
         peopleP.append(groupName,people);
-       	about.append(description,peopleP);
+       	about.append(title,description,peopleP);
         body.append(about);
 
       }
@@ -366,24 +366,6 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
     $("#about,#exhibition,#blog,.opencall,.links").show();
 
 
-    var Input = $('input[name=EMAIL]');
-    var default_value = Input.val();
-
-    $(Input).focus(function() {
-        if($(this).val() == default_value)
-        {
-             $(this).val("");
-        }
-    }).blur(function(){
-        if($(this).val().length == 0) /*Small update*/
-        {
-            $(this).val(default_value);
-        }
-    });
-
-
-        $("div[data-oembed]").fitVids().addClass("hello?");
-
         $(".title:first-child").addClass("active");
 
         $(".title").click(function(){
@@ -417,6 +399,21 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
                     $("#about,#exhibition").css("text-decoration","none");
                     $("#blog").css("text-decoration","underline");
                   }
+        });
+
+        var Input = $('input[name=EMAIL]');
+        var default_value = Input.val();
+
+        $(Input).focus(function() {
+            if($(this).val() == default_value)
+            {
+                 $(this).val("");
+            }
+        }).blur(function(){
+            if($(this).val().length == 0) /*Small update*/
+            {
+                $(this).val(default_value);
+            }
         });
 
 
