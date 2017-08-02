@@ -345,7 +345,7 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
 
           $(window).on("orientationchange",function(){
       	    	if(window.orientation == 0) {
-      	      		$(".titlesection,.opencall,.insta,.home,#mc_embed_signup,.about,.blog,.exhibition").show();
+      	      		$(".titlesection,.opencall,.insta,.home,#mc_embed_signup").show();
                   $(".errorM").hide();
       	    	} else {
       	      		$(".titlesection,.opencall,.insta,.home,#mc_embed_signup,.about,.blog,.exhibition").hide();
