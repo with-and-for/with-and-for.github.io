@@ -536,14 +536,16 @@ iframe {
 }
 
 .errorM {
+  display: inline;
+  width: 90vw;
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 5vw;
+  top: 40%;
   display: none;
   font-size: 30;
-  color: red;
-  transform:translate(-50%,-50%);
- -webkit-transform:translate(-50%,-50%);
+  color: black;
+  transform:translate(0%,-50%);
+ -webkit-transform:translate(0%,-50%);
 }
 
 
@@ -637,7 +639,7 @@ iframe {
 }
 
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 760px) {
   body {
     width: 100vw !important;
   }

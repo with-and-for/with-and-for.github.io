@@ -303,7 +303,7 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
 
 
 
-  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+  if( /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) ) {
 
     $(".title:first-child").addClass("active");
     $("#about,#exhibition,#blog,.opencall,.links").show();
