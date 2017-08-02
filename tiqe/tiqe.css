@@ -535,6 +535,17 @@ iframe {
   left: 1%;
 }
 
+.errorM {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: none;
+  font-size: 30;
+  color: red;
+  transform:translate(-50%,-50%);
+ -webkit-transform:translate(-50%,-50%);
+}
+
 
 
 

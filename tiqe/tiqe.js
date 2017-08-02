@@ -346,8 +346,10 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
           $(window).on("orientationchange",function(){
       	    	if(window.orientation == 0) {
       	      		$("html,body").show();
+                  $(".errorM").hide();
       	    	} else {
-      	      		$("html,body").hide();
+      	      		$(".titlesection,.opencall,.insta,.home,#mc_embed_signup,.about,.blog,.exhibition").hide();
+                  $(".errorM").show();
       	    	}
         		});
 
