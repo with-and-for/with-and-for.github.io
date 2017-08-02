@@ -343,30 +343,6 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
               }
     });
 
-    var Input = $('input[name=EMAIL]');
-    var default_value = Input.val();
-
-    $(Input).focus(function() {
-        if($(this).val() == default_value)
-        {
-             $(this).val("");
-        }
-    }).blur(function(){
-        if($(this).val().length == 0) /*Small update*/
-        {
-            $(this).val(default_value);
-        }
-    });
-
-    $(window).bind("orientationchange", function(){
-    var orientation = window.orientation;
-    var new_orientation = (orientation) ? 0 : 180 + orientation;
-    $('body').css({
-        "-webkit-transform": "rotate(" + new_orientation + "deg)"
-    });
-});
-
-
 
 
 
@@ -410,21 +386,6 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
                     $("#about,#exhibition").css("text-decoration","none");
                     $("#blog").css("text-decoration","underline");
                   }
-        });
-
-        var Input = $('input[name=EMAIL]');
-        var default_value = Input.val();
-
-        $(Input).focus(function() {
-            if($(this).val() == default_value)
-            {
-                 $(this).val("");
-            }
-        }).blur(function(){
-            if($(this).val().length == 0) /*Small update*/
-            {
-                $(this).val(default_value);
-            }
         });
 
 
