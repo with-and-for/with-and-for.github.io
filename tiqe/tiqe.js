@@ -343,18 +343,13 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
               }
     });
 
-    $(window).bind('orientationchange', function(e, onready){
-   if(onready){
-       $(document.body).addClass('portrait');
-   }
-   if (Math.abs(window.orientation) != 90){
-       $(document.body).addClass('portrait-onready');
-   }
-   else {
-       $(document.body).removeClass('portrait').removeClass('portrait-onready');
-   }
-});
-$(window).trigger('orientationchange', true);
+          $(window).on("orientationchange",function(){
+      	    	if(window.orientation == 0) {
+      	      		$("html,body").hide();
+      	    	} else {
+      	      		$("html,body").show();
+      	    	}
+        		});
 
 
 

@@ -535,14 +535,6 @@ iframe {
   left: 1%;
 }
 
-.portrait {
-    -webkit-transform: rotate(90deg);
-    -webkit-transform-origin: 200px 190px;
-}
-.portrait-onready {
-    -webkit-transform: rotate(90deg);
-    -webkit-transform-origin: 165px 150px;
-}
 
 
 
