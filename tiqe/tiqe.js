@@ -298,10 +298,9 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
 
   }, "MC5XWERqSWlBQUFFUElzeWtp.OGjvv70O77-9TQbvv73vv73vv73vv73vv73vv73vv73vv707ETVuRe-_vQjvv73vv70j77-9Ju-_vT1SQkE");
 
-
-
-
-
+  if( /iPad/i.test(navigator.userAgent) ) {
+    $(".insta").hide();
+  }
 
   if( /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) ) {
 
