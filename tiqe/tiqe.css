@@ -454,8 +454,8 @@ iframe {
 
 .close {
   position: fixed;
-  top: 17vh !important;
-  right: 3vw !important;
+  top: 4.5vh !important;
+  right: 2vw !important;
   width: 20px;
   height: 20px;
   z-index: 999;
@@ -489,7 +489,7 @@ iframe {
   position: relative;
   font-size: 28 !important;
   left: 9vw !important;
-  top: 16vh !important;
+  top: 9vh !important;
   width: 60vw;
 }
 
