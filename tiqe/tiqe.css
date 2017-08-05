@@ -145,7 +145,7 @@ iframe {
   display:none;
   position: absolute;
 	z-index: 998;
-	top: 2vh;
+	top: 1.5vh;
 	font-weight: 300;
 	margin: 0;
 	margin-top: 0;
@@ -186,7 +186,7 @@ iframe {
   width: 53vw !important;
   height: 53vh !important;
   margin-top: 9vh !important;
-  margin-bottom: auto;
+  margin-bottom: -5vh;
 }
 
 .people {
@@ -249,7 +249,7 @@ iframe {
   background-color: transparent;
   width: 80vw;
   height: 525px;
-  margin-bottom: -1vh;
+  margin-bottom: -5vh;
   left: 10vw;
   overflow: hidden;
   transform:translate(0%,0%);
@@ -304,7 +304,7 @@ iframe {
   position: relative;
   left: 10vw;
   top: 6.25vh;
-  margin-bottom: auto;
+  margin-bottom: -5vh;
   max-width: 48vw;
   font-weight: 900;
   font-size: 28;
@@ -581,6 +581,9 @@ iframe {
 
 @media screen and (max-width: 1300px) {
 
+  .about >div > iframe,.projectpost > .exhibitionimages,.blog>.post>h1 {
+    margin-bottom: auto;
+  }
   .opencall,#mc_embed_signup,.insta {
     position: fixed;
     margin-top: 0;
@@ -590,6 +593,10 @@ iframe {
     height: 35px;
     float: left;
     overflow: hidden;
+  }
+
+  .about,.exhibition,.blog {
+    top: 8vh;
   }
 
   .bigfont {
