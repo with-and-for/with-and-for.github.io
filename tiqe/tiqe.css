@@ -154,10 +154,10 @@ iframe {
   min-height: 100vh;
   overflow: scroll;
 	-webkit-transition: all .2s ease-in-out;
-  	-moz-transition: all .2s ease-in-out;
-  	-o-transition: all .2s ease-in-out;
-  	transition: all .2s ease-in-out;
-	}
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
 
 .about > h1:first-child, .exhibition > h1:first-child, .blog > h1:first-child {
   position: relative;
