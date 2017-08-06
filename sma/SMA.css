@@ -1,0 +1,173 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+::-moz-scrollbar {
+    display: none;
+}
+
+::-scrollbar {
+    display: none;
+}
+
+html {
+	margin: 0;
+	font-family: 'Work Sans', sans-serif;
+	font-size: 19;
+}
+
+body {
+	font-weight: 400;
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+}
+
+.close {
+	cursor: pointer;
+	margin-top: 0;
+	display: none;
+	position: fixed;
+	top: 20px;
+	left: 25vw;
+	width: 20px;
+	height: 20px;
+}
+
+
+.name {
+	cursor: pointer;
+	margin: 0;
+	position: fixed;
+	top: 15px;
+	left: 15px;
+	font-weight: 400 !important;
+}
+
+.pro {
+	position: fixed;
+	left: 15px;
+	top: 30px;
+	cursor: pointer;
+}
+
+.infoabout {
+	cursor: pointer;
+	position: fixed;
+	right: 15px;
+	top: 15px;
+	margin-top: 0;
+}
+
+.infoabout:hover,.name:hover {
+	opacity: 1 !important;
+}
+
+.about {
+	display: inline;
+	margin: 0;
+	margin-top: 0;
+	display: none;
+	position: fixed;
+	top: 0 !important;
+	width: 40vw;
+	left: 30vw;
+	height: auto;
+}
+
+.about > p {
+	margin-top: 0;
+}
+
+.project {
+	z-index: 999;
+	margin: 0;
+	top: 15px;
+	left: 30vw;
+	position: relative;
+	width: 40vw;
+	height: auto;
+	margin-bottom: 10vh;
+	padding-bottom: 5vh;
+	border-bottom: .2vh solid white;
+	-webkit-transition: width .4s ease-in-out;
+  -moz-transition: width .4s ease-in-out;
+  -o-transition: width .4s ease-in-out;
+  transition: width .4s ease-in-out;
+}
+
+.project:hover {
+	border-bottom: .2vh solid black;
+}
+
+.thumbnail > img{
+	cursor: pointer;
+	display: inline;
+	width: 100%;
+	height: auto;
+}
+
+.info {
+	cursor: text;
+	position: fixed;
+	left: 15px;
+	bottom: 5vh;
+	width: 26vw;
+	height: auto;
+	display: none;
+}
+
+.images {
+	display: none;
+}
+
+.images > section > img {
+	width: 100%;
+	height: auto;
+	margin-bottom: 5vh;
+}
+
+.images > section > img:first-child {
+	margin-top: 0;
+}
+
+.title,.date {
+	position: relative;
+}
+
+.title {
+	top: 0;
+	margin-top: 0;
+	margin-bottom: -10px;
+}
+
+@media screen and (max-width: 736px) {
+	.name {
+		left: 5vw;
+	}
+
+	.infoabout {
+		right: 5vw;
+	}
+
+	.project {
+		top: 100px;
+		width: 90vw;
+		left: 5vw;
+		margin-bottom: 10vh;
+		border-bottom: none;
+	}
+
+	.close {
+		left: 5vw;
+		top: 60px;
+	}
+
+	.about {
+		width: 90vw;
+		left: 5vw;
+		top: 100px !important;
+	}
+
+
+}
