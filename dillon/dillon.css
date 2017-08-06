@@ -1,0 +1,130 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+::-moz-scrollbar {
+    display: none;
+}
+
+::-scrollbar {
+    display: none;
+}
+
+
+html {
+	margin: 0;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: scroll;
+}
+
+.app {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 300vw;
+	height: 100vh;
+}
+
+.name {
+	cursor: pointer;
+	margin: 0;
+	position: fixed;
+	z-index: 9;
+	top: 10px;
+	left: 10px;
+}
+
+.back {
+	cursor: pointer;
+	z-index: 999;
+	display: none;
+	margin: 0;
+	position: fixed;
+	z-index: 9;
+	top: 40px;
+	left: 10px;
+}
+
+.ptitle {
+	position: fixed;
+	margin: 0;
+	top: 10px;
+	left: 150px;
+	display:none;
+}
+
+.date {
+	position: relative;
+	top: 55vh;
+	left: 150px;
+	display:none;
+}
+
+.info {
+	margin-right: 5vw;
+	position: fixed;
+	top: 58vh;
+	left: 150px;
+	width: 80vw;
+	display:none;
+	height: 45vh;
+	margin-bottom: 1vw;
+	-webkit-columns: 80px 2;
+    -moz-columns: 80px 2;
+    columns: 80px 2;
+}
+
+.images {
+	position: absolute;
+	top: 65px;
+	left: 0 !important;
+	width: 200vw;
+	height: 45vh;
+	display: none;
+	overflow-x: scroll;
+	overflow-y: scroll;
+	white-space: nowrap;
+}
+
+.images > section > img {
+	position: relative;
+	float: left;
+	top: 0;
+	left: 150px;
+	height: 45vh;
+	width: auto;
+	margin-right: 3vw;
+	display: inline-block;
+}
+
+.thumbnail > img {
+	position: absolute;
+	bottom: 0;
+	width:100%;
+	height: auto;
+	-webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.thumbnail >img:hover {
+}
+
+.project {
+	background-color: transparent;
+	cursor: pointer;
+	overflow: visible;
+	margin-right: 2vw;
+	float: left;
+	position: relative;
+	float: left;
+	height: 100vh;
+	width: 300px;
+}
