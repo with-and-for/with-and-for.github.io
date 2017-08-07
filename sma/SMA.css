@@ -13,7 +13,8 @@
 html {
 	margin: 0;
 	font-family: 'Work Sans', sans-serif;
-	font-size: 19;
+	font-size: 17;
+	font-weight: 400;
 }
 
 body {
@@ -23,17 +24,33 @@ body {
 	height: 100vh;
 }
 
+.home > img{
+	position: absolute;
+	left: 31vw;
+	top: 65px;
+	width: 55vw !important;
+	height: auto;
+}
+
 .close {
+	border-radius: 50%;
 	cursor: pointer;
 	margin-top: 0;
 	display: none;
 	position: fixed;
-	top: 20px;
-	left: 25vw;
+	top: 17px;
+	left: 26vw;
 	width: 20px;
 	height: 20px;
+	-webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
+.close:hover {
+	/*background-color: #f9fbff;*/
+}
 
 .name {
 	cursor: pointer;
@@ -41,13 +58,13 @@ body {
 	position: fixed;
 	top: 15px;
 	left: 15px;
-	font-weight: 400 !important;
 }
 
 .pro {
-	position: fixed;
-	left: 15px;
-	top: 30px;
+	margin-top: 0;
+	position: absolute;
+	left: 31vw;
+	top: 15px;
 	cursor: pointer;
 }
 
@@ -64,26 +81,28 @@ body {
 }
 
 .about {
-	display: inline;
 	margin: 0;
-	margin-top: 0;
+	margin-top: -5;
 	display: none;
 	position: fixed;
 	top: 0 !important;
 	width: 40vw;
-	left: 30vw;
+	left: 31vw;
 	height: auto;
+	font-weight: 300;
 }
 
-.about > p {
+.about > p{
+	position: relative;
+	top: 0;
 	margin-top: 0;
 }
 
 .project {
 	z-index: 999;
 	margin: 0;
-	top: 15px;
-	left: 30vw;
+	top: 100vh;
+	left: 31vw;
 	position: relative;
 	width: 40vw;
 	height: auto;
@@ -97,17 +116,28 @@ body {
 }
 
 .project:hover {
-	border-bottom: .2vh solid black;
+	/*background-color: #f9fbff;*/
 }
 
 .thumbnail > img{
+	top: 50px;
 	cursor: pointer;
 	display: inline;
 	width: 100%;
 	height: auto;
+	position: relative;
+	-webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.thumbnail > img:hover {
+	opacity: .9;
 }
 
 .info {
+	font-weight: 400;
 	cursor: text;
 	position: fixed;
 	left: 15px;
@@ -124,21 +154,28 @@ body {
 .images > section > img {
 	width: 100%;
 	height: auto;
-	margin-bottom: 5vh;
+	margin-bottom: 2vh;
 }
 
 .images > section > img:first-child {
-	margin-top: 0;
+	margin-top: 50px;
 }
 
 .title,.date {
-	position: relative;
+	margin-top: 0;
+	position: absolute;
 }
 
 .title {
 	top: 0;
-	margin-top: 0;
-	margin-bottom: -10px;
+	left: 0;
+}
+
+.date {
+	display: inline-block;
+	top:0;
+	right: 0;
+	margin-bottom: -0px;
 }
 
 @media screen and (max-width: 736px) {

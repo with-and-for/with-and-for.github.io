@@ -1,6 +1,38 @@
-
-
 $(document).ready(function(){
+
+	Prismic.Api('https://smarchitects.prismic.io/api', function (err, Api) {
+	    Api.form("everything")
+	    .ref(Api.master())
+	    .query(Prismic.Predicates.at("document.type", "home_image"))
+	    .submit(function (err, response) {
+	      var results = response.results;
+	      var body = $("body");
+	      for (var i = 0; i < results.length; i++) {
+
+					image = results[i].getImage("home_image.image").asHtml();
+					var imageD = $("<div class='home'></div>");
+					imageD.append(image);
+					body.append(imageD);
+	      }
+	    });
+			if( /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+				$(".infoabout").click(function(){
+					$(".project,.info,.images,.close").hide();
+					$(".about,.thumbnail").show();
+					$(".infoabout").css("opacity","1");
+					$(".name").css("opacity",".1");
+				});
+			} else {
+				$(".infoabout").click(function(){
+					$(".project,.info,.images,.close,.pro,.home").hide();
+					$(".project").css("width","40vw");
+					$(".about,.thumbnail").show();
+					$(".infoabout").css("opacity","1");
+					$(".name").css("opacity",".1");
+				});
+			}
+	  }, "MC5XWWRBd3ljQUFJbVZZZnFo.TO-_vXDvv73vv73vv73vv73vv71F77-9cu-_vWx1b--_ve-_vSpjdzFtG--_ve-_ve-_ve-_ve-_vWnvv71077-9");
+
 
 	Prismic.Api('https://smarchitects.prismic.io/api', function (err, Api) {
 	    Api.form("everything")
@@ -30,10 +62,9 @@ $(document).ready(function(){
 					$(".about,.thumbnail").show();
 					$(".infoabout").css("opacity","1");
 					$(".name").css("opacity",".1");
+					$(".pro").hide();
 				});
 			}
-
-
 	  }, "MC5XWWRBd3ljQUFJbVZZZnFo.TO-_vXDvv73vv73vv73vv73vv71F77-9cu-_vWx1b--_ve-_vSpjdzFtG--_ve-_ve-_ve-_ve-_vWnvv71077-9");
 
 
@@ -93,20 +124,25 @@ Prismic.Api('https://smarchitects.prismic.io/api', function (err, Api) {
 										});
 
 				} else {
+										$(".pro").click(function(){
+											var height = $(window).height()-15;
+											$("body").animate({scrollTop:height},0);
+										});
 										$(".project").click(function(){
 											$(".infoabout").css("opacity",".1");
 											$(".close").show();
 											var offset = $(this).offset();
+											var height = $(this).height();
 											var top = offset.top;
-											console.log(top);
+											console.log(top,height);
 											$(".project").css("width","40vw");
-											$(this).css("width","62vw");
-											$("body").animate({scrollTop:top-15},500);
+											$(this).css("width","55vw");
 											$(".images,.info").hide();
 											$(".thumbnail").show();
 											$(".thumbnail",this).hide();
 											console.log("hello");
 											$(".images,.info",this).show();
+											$("body").animate({scrollTop:top-15},500);
 										});
 									$(".name").click(function(){
 										$("body").animate({scrollTop:0},400);
@@ -125,6 +161,15 @@ Prismic.Api('https://smarchitects.prismic.io/api', function (err, Api) {
 				  $(".infoabout").css("opacity","1");
 				 });
  } else {
+	 			$(window).scroll(function(){
+					var height = $(window).height();
+					if ($("body").scrollTop() < height/2 ) {
+						$(".close,.info,.images").fadeOut(300);
+						$(".thumbnail,.project").show();
+						$(".project").css("width","40vw");
+						$(".infoabout").css("opacity","1");
+					}
+				})
 				 $(".close").click(function(){
 				 	$(".project").css("width","40vw");
 				 	$(".info,.images").hide();
@@ -132,15 +177,16 @@ Prismic.Api('https://smarchitects.prismic.io/api', function (err, Api) {
 				 	$(".close").hide();
 				 	$(".infoabout").css("opacity","1");
 				 });
+				 $(".name").click(function(){
+			 		$(".about,.close").hide();
+			 		$(".project,.pro,.home").show();
+			 		$(".infoabout").css("opacity","1");
+			 		$(".name").css("opacity","1");
+			 	});
  }
 
 
-	$(".name").click(function(){
-		$(".about").hide();
-		$(".project").show();
-		$(".infoabout").css("opacity","1");
-		$(".name").css("opacity","1");
-	});
+
 
 
 
