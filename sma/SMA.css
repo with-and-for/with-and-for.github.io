@@ -137,7 +137,7 @@ body {
 }
 
 .info {
-	font-weight: 400;
+	font-weight: 300;
 	cursor: text;
 	position: fixed;
 	left: 15px;
@@ -181,6 +181,10 @@ body {
 @media screen and (max-width: 736px) {
 	.name {
 		left: 5vw;
+	}
+
+	.pro,.home {
+		display: none;
 	}
 
 	.infoabout {

@@ -160,6 +160,12 @@ Prismic.Api('https://smarchitects.prismic.io/api', function (err, Api) {
 				  $(".close").hide();
 				  $(".infoabout").css("opacity","1");
 				 });
+				 $(".name").click(function(){
+			 		$(".about,.close").hide();
+			 		$(".project").show();
+			 		$(".infoabout").css("opacity","1");
+			 		$(".name").css("opacity","1");
+			 	});
  } else {
 	 			$(window).scroll(function(){
 					var height = $(window).height();
