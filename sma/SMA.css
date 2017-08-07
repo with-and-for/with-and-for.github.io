@@ -24,11 +24,15 @@ body {
 	height: 100vh;
 }
 
+.name:hover,.pro:hover,.infoabout:hover {
+	text-decoration: underline;
+}
+
 .home > img{
 	position: absolute;
 	left: 31vw;
 	top: 65px;
-	width: 55vw !important;
+	width: 60vw !important;
 	height: auto;
 }
 
@@ -115,10 +119,6 @@ body {
   transition: width .4s ease-in-out;
 }
 
-.project:hover {
-	/*background-color: #f9fbff;*/
-}
-
 .thumbnail > img{
 	top: 50px;
 	cursor: pointer;
@@ -133,7 +133,7 @@ body {
 }
 
 .thumbnail > img:hover {
-	opacity: .9;
+	opacity: .7;
 }
 
 .info {

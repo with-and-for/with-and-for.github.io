@@ -136,7 +136,7 @@ Prismic.Api('https://smarchitects.prismic.io/api', function (err, Api) {
 											var top = offset.top;
 											console.log(top,height);
 											$(".project").css("width","40vw");
-											$(this).css("width","55vw");
+											$(this).css("width","60vw");
 											$(".images,.info").hide();
 											$(".thumbnail").show();
 											$(".thumbnail",this).hide();
