@@ -635,6 +635,10 @@ iframe {
     padding-right: 1vw;
   }
 
+  .opencall > h1 {
+    top: 1vh;
+  }
+
   .open {
     position: absolute;
     right: 2vw !important;
