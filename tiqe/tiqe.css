@@ -535,7 +535,7 @@ iframe {
 }
 .opencall > h1 {
   font-weight: 900;
-  padding: .25vw;
+  padding: 0;
   border-radius: 2px;
   position: relative;
   display: inline;
@@ -559,7 +559,6 @@ iframe {
   border-radius: 2px;
   margin: 0;
   margin-top: 0;
-  padding: .5vw;
   position: relative;
   margin-top: 10% !important;
   margin-bottom: 10%;
