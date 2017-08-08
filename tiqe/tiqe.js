@@ -15,10 +15,8 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
           images = results[i].getGroup("home_images.images").asHtml();
 
           var homeD = $("<div class='home'></div>");
-          var up = $("<img class='uphome' src='up1.svg'>");
-          var down = $("<img class='downhome' src='down1.svg'>");
 
-          homeD.append(images,up,down);
+          homeD.append(images);
          	body.append(homeD);
 
         }
@@ -27,14 +25,11 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
         var height = $(".home").outerHeight();
         var inheight = $(".home").innerHeight()*$(".home > section").length;
 
-        $(".uphome,.downhome").hide();
-
-        setTimeout(function(){
-          $(".home").fadeIn(400);
-        },100);
-
         $(window).resize(function(){
           $(".home").scrollTop(0);
+          setTimeout(function(){
+            $(".home").scrollTop(0);
+          },400);
         });
 
         setInterval(function(){
@@ -304,8 +299,7 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
 
   if( /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) ) {
 
-    $(".title:first-child").addClass("active");
-    $("#about,#exhibition,#blog,.opencall,.links").show();
+    $("#about,#exhibition,#blog,.opencall,.home,.insta,.links,#mc_embed_signup").show();
 
 
     $(".title").click(function(){
@@ -342,7 +336,7 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
               }
     });
 
-          $(window).on("orientationchange",function(){
+    $(window).on("orientationchange",function(){
       	    	if(window.orientation == 0) {
       	      		$(".titlesection,.opencall,.insta,.home,#mc_embed_signup").show();
                   $(".errorM").hide();
@@ -351,7 +345,7 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
       	      		$(".titlesection,.opencall,.insta,.home,#mc_embed_signup,.about,.blog,.exhibition").hide();
                   $(".errorM").show();
       	    	}
-        		});
+    });
 
 
 
@@ -359,10 +353,25 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
 
   } else {
 
-    $("#about,#exhibition,#blog,.opencall,.links").show();
+    $("#about,#exhibition,#blog,.opencall,.home,.links,.insta,#mc_embed_signup").hide();
+    $(".home").hide();
+
+    setTimeout(function(){
+      $(".title:first-child").css({"color":"black"});
+    },1000);
+
+    setTimeout(function(){
+      $(".title:first-child").css({"width":"auto","font-size":"25"});
+    },2000);
+
+    setTimeout(function(){
+      $("#about,#exhibition,#blog").fadeIn(800);
+      $(".opencall,.links,.home,.insta,#mc_embed_signup").fadeIn(800);
+    },2500);
 
 
-        $(".title:first-child").addClass("active");
+
+        // $(".title:first-child").addClass("active");
 
         $(".title").click(function(){
               $(".opencall").removeClass("bigger");

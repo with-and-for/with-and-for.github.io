@@ -332,7 +332,6 @@ iframe {
 #about,#exhibition,#blog {
   padding-left: 1vw;
   padding-right: 1vw;
-  background-color: rgba(255,255,255,.95);
 }
 
 /*home page stuff*/
@@ -361,10 +360,6 @@ iframe {
 	cursor: pointer;
 	font-size: 25;
 	margin-right: 2.2vw;
-  -webkit-transition: all .1s ease;
-    -moz-transition: all .1s ease;
-    -o-transition: all .1s ease;
-    transition: all .1s ease;
 }
 
 .title:hover {
@@ -372,34 +367,39 @@ iframe {
 }
 
 .title:first-child{
+  color: #ff00ff;
+  line-height: 1;
+  font-size: 160;
+  width: 50vw;
   left: 1vw;
   margin: 0;
   padding: .25vw;
   font-weight: 900;
-  color: black;
   display: inline;
   cursor: pointer;
   margin-right:2vw;
   padding-left: 1vw !important;
   padding-right: 1vw !important;
-  background-color: rgba(255,255,255,.9);
   font-family: 'mad-sans-bold';
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 .title:first-child:hover {
   text-decoration: none !important;
-  font-size: 26;
 }
 
 .animation {
-  -webkit-animation: smallbig 10s linear infinite alternate;
-  animation: smallbig 10s linear infinite alternate;
+  -webkit-animation: smallbig 2s linear infinite alternate;
+  animation: smallbig 2s linear infinite alternate;
 }
 
 .home {
+  display: none;
   background-color: transparent;
   z-index: 90;
-  display: none;
   position: fixed;
   left:3vw;
   width: auto;
@@ -539,7 +539,7 @@ iframe {
   border-radius: 2px;
   position: relative;
   display: inline;
-  top: 1vh;
+  top: 0;
   left: 0;
   font-size: 20;
   font-family: 'mad-sans-bold';
@@ -587,7 +587,7 @@ iframe {
         -webkit-transform: scale(1.0);
     }
     100% {
-        -webkit-transform: scale(1.15);
+        -webkit-transform: scale(1.8);
     }
 }
 
@@ -596,7 +596,7 @@ iframe {
         transform: scale(1.0);
     }
     100% {
-        transform: scale(1.15);
+        transform: scale(1.8);
     }
 }
 
@@ -614,6 +614,10 @@ iframe {
     height: 35px;
     float: left;
     overflow: hidden;
+  }
+
+  .title:first-child{
+    font-size: 130;
   }
 
   .about,.exhibition,.blog {
@@ -767,10 +771,15 @@ iframe {
   .exhibition > .projectpost > h2 {
     top: 4.75vh !important;
   }
+  .titlesection {
+    width: 100vw;
+  }
 
   .title:first-child {
     margin-bottom: 2vh;
     font-size: 24;
+    width: auto;
+    color: black;
   }
 
   .title:first-child:hover,.title:first-child:active {
@@ -784,7 +793,7 @@ iframe {
   }
 
   .opencall {
-    top: 56vh !important;
+    top: 54.5vh !important;
     width: 300px;
     border-right: none;
     padding-bottom: 13px;
@@ -830,11 +839,16 @@ iframe {
   }
 
   .home {
+    display: inline;
     position: fixed;
     float: left;
     top: 16vh;
     height: 35vh;
     width: 95vw;
+  }
+
+  .home >section>img{
+    display: inline;
   }
 
   .bigger {
