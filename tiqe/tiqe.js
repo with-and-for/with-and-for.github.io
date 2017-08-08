@@ -357,17 +357,24 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
     $(".home").hide();
 
     setTimeout(function(){
-      $(".title:first-child").css({"color":"black"});
-    },1000);
+      $(".title:first-child").css({"color":"black","top":"1vh"});
+    },300);
 
     setTimeout(function(){
-      $(".title:first-child").css({"width":"auto","font-size":"25"});
+      $(".title:first-child").css({"width":"auto"});
     },2000);
 
     setTimeout(function(){
-      $("#about,#exhibition,#blog").fadeIn(800);
+      $(".title:first-child").css({"font-size":"25"});
+    },3000);
+
+    setTimeout(function(){
       $(".opencall,.links,.home,.insta,#mc_embed_signup").fadeIn(800);
-    },2500);
+    },3600);
+
+    setTimeout(function(){
+      $("#about,#exhibition,#blog").show();
+    },4900);
 
 
 

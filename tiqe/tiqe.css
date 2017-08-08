@@ -367,10 +367,10 @@ iframe {
 }
 
 .title:first-child{
-  color: #ff00ff;
+  color: black;
   line-height: 1;
   font-size: 160;
-  width: 50vw;
+  width: auto;
   left: 1vw;
   margin: 0;
   padding: .25vw;
@@ -378,13 +378,15 @@ iframe {
   display: inline;
   cursor: pointer;
   margin-right:2vw;
+  top: 100vh;
   padding-left: 1vw !important;
   padding-right: 1vw !important;
   font-family: 'mad-sans-bold';
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
+  -webkit-transition: all 2s ease;
+  -moz-transition: all 2s ease;
+  -o-transition: all 2s ease;
+  transition: all 2s ease;
+  transition-timing-function: ease;
 }
 
 .title:first-child:hover {
