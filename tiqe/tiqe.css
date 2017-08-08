@@ -10,9 +10,20 @@
     display: none;
 }
 
+@font-face {
+    font-family: 'mad-sans-bold';
+    src: url('mad-sans-bold.eot');
+    src: url('mad-sans-bold.eot?#iefix') format('embedded-opentype'),
+         url('mad-sans-bold.woff') format('woff'),
+         url('mad-sans-bold.woff2') format('woff2'),
+         url('mad-sans-bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 html{
   margin:0;
-	font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -20,6 +31,7 @@ body {
 	width: 100vw;
 	height: 100vh;
 	overflow: auto;
+  font-family: 'Roboto', sans-serif;
 }
 
 .insta {
@@ -58,6 +70,7 @@ body {
   left:
   font-weight: 300 !important;
   font-size: 20;
+  font-family: 'Roboto', sans-serif;
 }
 
 #mc-embedded-subscribe {
@@ -167,6 +180,7 @@ iframe {
   top: 6vh;
   margin-bottom: 10vh;
   margin-top: 0;
+  font-family: 'mad-sans-bold';
 }
 
 /*about section stuff*/
@@ -180,6 +194,7 @@ iframe {
 .about > h1:first-child {
   top: 8.25vh;
   margin-bottom: 4vh !important;
+  font-family: 'mad-sans-bold';
 }
 
 .about > div > iframe {
@@ -199,6 +214,7 @@ iframe {
   font-weight: 900 !important;
   margin-bottom: 4vh !important;
   font-size: 28 !important;
+  font-family: 'mad-sans-bold';
 }
 
 .people > section > img {
@@ -263,6 +279,7 @@ iframe {
   left: 10vw;
   top: 5.85vh;
   width: 50vw;
+  font-family: 'mad-sans-bold';
 }
 
 .exhibition > h1 {
@@ -271,6 +288,7 @@ iframe {
   left: 10vw;
   top: 6vh;
   width: 50vw;
+  font-family: 'mad-sans-bold';
 }
 
 .projectpost {
@@ -308,6 +326,7 @@ iframe {
   max-width: 48vw;
   font-weight: 900;
   font-size: 28;
+  font-family: 'mad-sans-bold';
 }
 
 #about,#exhibition,#blog {
@@ -364,6 +383,7 @@ iframe {
   padding-left: 1vw !important;
   padding-right: 1vw !important;
   background-color: rgba(255,255,255,.9);
+  font-family: 'mad-sans-bold';
 }
 
 .title:first-child:hover {
@@ -421,6 +441,7 @@ iframe {
   top: 0vh;
   margin-bottom: 5vh;
   margin-top: 0;
+  font-family: 'mad-sans-bold';
 }
 
 .links > ul {
@@ -522,6 +543,7 @@ iframe {
   top: 1vh;
   left: .5vw;
   font-size: 20;
+  font-family: 'mad-sans-bold';
 }
 
 .info > p{
