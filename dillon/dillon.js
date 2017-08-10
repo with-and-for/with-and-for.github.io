@@ -50,28 +50,59 @@ Prismic.Api('https://dillonfroelich.prismic.io/api', function (err, Api) {
 			$("body").mousewheel(function(event, delta) {
 		     	this.scrollLeft -= (delta * .3);
 		      event.preventDefault();
+          $(".tip").fadeOut(200);
    		});
 
+      $(".name").click(function() {
+        $("body").scrollLeft(0);
+        $(".thumbnail,.project").show();
+        $(".info,.images,.date,.ptitle").hide();
+        $(".back,.down,.up").hide();
+        $(".tip").fadeOut(200);
+   		});
+
+      $(".down").click(function(){
+        console.log("Wtf");
+        $("body").scrollLeft(0);
+        $(".images").css("top","-90vh");
+        $(".info").css("top","7vh");
+        $(".down,.up").css("background-color","white");
+        $(".tip").fadeOut(200);
+      });
+
+      $(".up").click(function(){
+        console.log("Wtf");
+        $("body").scrollLeft(0);
+        $(".images").css("top","14vh");
+        $(".info").css("top","100vh");
+        $(".down,.up").css("background-color","rgba(255,255,255,.2)");
+        $(".tip").fadeOut(200);
+        // var offset = $(".images",this).offset();
+				// var left = offset.left;
+        // $("body").scrollLeft(-left);
+      });
+
 			$(".project").click(function(){
-				$(".back").show();
-				$("body").scrollLeft(0);
-				$(this).addClass("active");
-				$(".thumbnail").hide();
-				$(".info,.images,.date,.ptitle",this).show();
-				var offset = $(".images",this).offset();
-				var left = offset.left;
-				$("body").scrollLeft(left);
+          $(".down,.up").css("background-color","rgba(255,255,255,.2)");
+          $(".back,.down,.up").show();
+  				$("body").scrollLeft(0);
+  				$(this).addClass("active");
+  				$(".thumbnail,.project").hide();
+  				$(".info,.images,.date,.ptitle",this).show();
+          $(this).show();
+          $(".images").css("top","14vh");
+          $(".info").css("top","100vh");
+          $(".tip").fadeOut(200);
+
 			});
 
 			$(".back").click(function(){
 				$("body").scrollLeft(0);
-				$(".thumbnail").show();
+				$(".thumbnail,.project").show();
 				$(".info,.images,.date,.ptitle").hide();
-				$(".back").hide();
+				$(".back,.down,.up").hide();
+        $(".tip").fadeOut(200);
 			});
-
-
-
 
     });
 

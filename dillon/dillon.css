@@ -16,28 +16,112 @@ html {
 }
 
 body {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto',sans-serif;
 	margin: 0;
 	width: 100vw;
 	height: 100vh;
-	overflow: scroll;
+	overflow: hidden;
+   font-size: 18;
+}
+
+.tip {
+  position: fixed;
+  top: 40vh;
+  margin-top: .25vh;
+  width: 20px;
+  height: 20px;
+  left: 1.25vw;
+  background-color: #f2f2f2;
+  border-radius: 50%;
+  animation-name: example;
+  animation-duration: 2.75s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  -webkit-box-shadow: 0px 5px 14px 0px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0px 5px 14px 0px rgba(0,0,0,0.15);
+  box-shadow: 0px 5px 14px 0px rgba(0,0,0,0.15);
+}
+
+@keyframes example {
+    0%   {
+          top: 40vh;
+          -webkit-box-shadow: 0px 5px 14px 0px rgba(0,0,0,0.15);
+          -moz-box-shadow: 0px 5px 14px 0px rgba(0,0,0,0.15);
+          box-shadow: 0px 5px 14px 0px rgba(0,0,0,0.15);
+          }
+    25%  {
+          top: 40vh;
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
+          }
+    50%  {
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
+          top: 46vh;
+          }
+    85%   {
+          top: 46vh;
+          }
+    100% {
+          top: 40vh;
+          -webkit-box-shadow: 0px 5px 14px 0px rgba(0,0,0,0.15);
+          -moz-box-shadow: 0px 5px 14px 0px rgba(0,0,0,0.15);
+          box-shadow: 0px 5px 14px 0px rgba(0,0,0,0.15);
+          }
 }
 
 .app {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 300vw;
+	width: 500vw;
 	height: 100vh;
 }
 
+.up,.down,.back {
+  padding-right: 1vw;
+  padding-left: 1vw;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  border-radius:  2px;
+  left: 5px;
+  background-color: white;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.up:hover,.down:hover,.back:hover {
+  color: gray;
+}
+
+.up {
+  cursor: pointer;
+  z-index: 999;
+  position: fixed;
+  top: 25vh;
+}
+.down {
+  cursor: pointer;
+  z-index: 999;
+  position: fixed;
+  bottom: 25vh;
+}
 .name {
 	cursor: pointer;
 	margin: 0;
 	position: fixed;
 	z-index: 9;
 	top: 10px;
-	left: 10px;
+  left: 15px;
+  margin-left: .25vw;
 }
 
 .back {
@@ -48,7 +132,6 @@ body {
 	position: fixed;
 	z-index: 9;
 	top: 40px;
-	left: 10px;
 }
 
 .ptitle {
@@ -67,38 +150,65 @@ body {
 }
 
 .info {
+  margin-top: .5vh;
 	margin-right: 5vw;
-	position: fixed;
-	top: 58vh;
-	left: 150px;
-	width: 80vw;
+	position: relative;
+	top:40px;
+	left: 0;
+	width: 250vw;
 	display:none;
-	height: 45vh;
+	height: 85vh;
+  overflow-x: scroll;
 	margin-bottom: 1vw;
-	-webkit-columns: 80px 2;
-    -moz-columns: 80px 2;
-    columns: 80px 2;
+  -webkit-columns: 100px 6;
+  -moz-columns: 100px 6;
+  columns: 100px 6;
+  -webkit-column-fill: auto; /* Chrome, Safari, Opera */
+  -moz-column-fill: auto; /* Firefox */
+  column-fill: auto;
+}
+
+.info > p {
+  position: relative;
 }
 
 .images {
-	position: absolute;
-	top: 65px;
-	left: 0 !important;
-	width: 200vw;
-	height: 45vh;
-	display: none;
-	overflow-x: scroll;
-	overflow-y: scroll;
-	white-space: nowrap;
+  position: absolute;
+  top: 15vh;
+  left: 0;
+  width: 70000vw;
+  height: 70vh;
+  display: none;
+  margin-top: 0;
 }
 
-.images > section > img {
-	position: relative;
+section {
+  position: relative;
+  top: 0;
+  margin-top: 0;
+}
+
+.images > section > p > img {
+  position: relative;
+	float: left;
+	top: -2vh;
+	left: 0;
+	height: 100%;
+	width: auto;
+  margin-top: 0 !important;
+	margin-right: 1vw;
+	display: inline-block;
+}
+
+.images > section > div > iframe{
+  position: relative;
 	float: left;
 	top: 0;
-	left: 150px;
-	height: 45vh;
-	width: auto;
+	left: 0;
+	height: 70vh;
+	width: 73vw;
+  z-index: 0;
+  overflow: hidden;
 	margin-right: 3vw;
 	display: inline-block;
 }
@@ -120,11 +230,12 @@ body {
 .project {
 	background-color: transparent;
 	cursor: pointer;
-	overflow: visible;
-	margin-right: 2vw;
+	margin-right: 6vw;
 	float: left;
+  left: 150px;
 	position: relative;
-	float: left;
 	height: 100vh;
-	width: 300px;
+	width: 135px;
+  z-index: 0;
+  overflow: visible;
 }
