@@ -2,6 +2,43 @@
 
 $(document).ready(function(){
 
+  Prismic.Api('https://dillonfroelich.prismic.io/api', function (err, Api) {
+      Api.form("everything")
+      .ref(Api.master())
+      .query(Prismic.Predicates.at("document.type", "about"))
+      .submit(function (err, response) {
+        var results = response.results;
+        var body = $("body");
+  			var app = $(".app");
+
+
+        for (var i = 0; i < results.length; i++) {
+
+  				info = results[i].getStructuredText("about.about").asHtml();
+
+  				var infoD = $("<div class='about'></div>");
+
+  				infoD.append(info);
+          app.append(infoD);
+
+
+        }
+
+      });
+
+      $(".name").click(function() {
+        $(".about").toggle();
+        // $("body").scrollLeft(0);
+        // $(".thumbnail,.project").show();
+        // $(".info,.images,.date,.ptitle").hide();
+        // $(".back,.down,.up").hide();
+        // $(".tip").fadeOut(200);
+   		});
+
+
+
+    }, "MC5XWVlVZkNZQUFBWmZfeUNH.77-977-9F--_vVjvv73vv73vv73vv73vv70E77-977-977-9a--_vSE277-9TlsX77-9QQHvv70fe--_ve-_ve-_ve-_vQ");
+
 
 Prismic.Api('https://dillonfroelich.prismic.io/api', function (err, Api) {
     Api.form("everything")
@@ -48,17 +85,15 @@ Prismic.Api('https://dillonfroelich.prismic.io/api', function (err, Api) {
       $(ordered).appendTo(".app");
 
 			$("body").mousewheel(function(event, delta) {
-		     	this.scrollLeft -= (delta * .3);
+		     	this.scrollLeft -= (delta * .18);
 		      event.preventDefault();
           $(".tip").fadeOut(200);
-   		});
 
-      $(".name").click(function() {
-        $("body").scrollLeft(0);
-        $(".thumbnail,.project").show();
-        $(".info,.images,.date,.ptitle").hide();
-        $(".back,.down,.up").hide();
-        $(".tip").fadeOut(200);
+          if ($("body").scrollLeft() > 20) {
+            $(".up,.down,.back").addClass("none");
+          } else {
+            $(".up,.down,.back").removeClass("none");
+          }
    		});
 
       $(".down").click(function(){
@@ -75,7 +110,7 @@ Prismic.Api('https://dillonfroelich.prismic.io/api', function (err, Api) {
         $("body").scrollLeft(0);
         $(".images").css("top","14vh");
         $(".info").css("top","100vh");
-        $(".down,.up").css("background-color","rgba(255,255,255,.2)");
+        $(".down,.up").css("background-color","rgba(255,255,255,0)");
         $(".tip").fadeOut(200);
         // var offset = $(".images",this).offset();
 				// var left = offset.left;
@@ -83,11 +118,11 @@ Prismic.Api('https://dillonfroelich.prismic.io/api', function (err, Api) {
       });
 
 			$(".project").click(function(){
-          $(".down,.up").css("background-color","rgba(255,255,255,.2)");
+          $(".down,.up").css("background-color","rgba(255,255,255,0)");
           $(".back,.down,.up").show();
   				$("body").scrollLeft(0);
   				$(this).addClass("active");
-  				$(".thumbnail,.project").hide();
+  				$(".thumbnail,.project,.name,.about").hide();
   				$(".info,.images,.date,.ptitle",this).show();
           $(this).show();
           $(".images").css("top","14vh");
@@ -98,14 +133,13 @@ Prismic.Api('https://dillonfroelich.prismic.io/api', function (err, Api) {
 
 			$(".back").click(function(){
 				$("body").scrollLeft(0);
-				$(".thumbnail,.project").show();
+				$(".thumbnail,.project,.name").show();
 				$(".info,.images,.date,.ptitle").hide();
 				$(".back,.down,.up").hide();
         $(".tip").fadeOut(200);
 			});
 
     });
-
 
   }, "MC5XWVlVZkNZQUFBWmZfeUNH.77-977-9F--_vVjvv73vv73vv73vv73vv70E77-977-977-9a--_vSE277-9TlsX77-9QQHvv70fe--_ve-_ve-_ve-_vQ");
 

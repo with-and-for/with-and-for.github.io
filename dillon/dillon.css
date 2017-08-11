@@ -21,7 +21,7 @@ body {
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
-   font-size: 18;
+   font-size: 15;
 }
 
 .tip {
@@ -76,30 +76,64 @@ body {
           }
 }
 
+.about {
+  display: none;
+    position: fixed;
+    left: 150px;
+    top: 40px;
+    padding-top: .5vh;
+    width: 40vw;
+    height: auto;
+    max-height: 100vh;
+}
+
 .app {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 500vw;
+	width: 200vw;
 	height: 100vh;
 }
 
 .up,.down,.back {
+  text-decoration: underline;
   padding-right: 1vw;
   padding-left: 1vw;
   padding-top: 2vh;
   padding-bottom: 2vh;
-  border-radius:  2px;
+  border-radius:  3px;
   left: 5px;
   background-color: white;
   -webkit-transition: all .2s ease-in-out;
   -moz-transition: all .2s ease-in-out;
   -o-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
+  /*-webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.05);
+-moz-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.05);
+box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.05);*/
+}
+
+.none {
+  -webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;
+}
+
+.back {
+  border-right: none;
+}
+
+.up {
+
+}
+
+.down {
+
 }
 
 .up:hover,.down:hover,.back:hover {
-  color: gray;
+  background-color: white !important;
+  text-decoration: none !important;
 }
 
 .up {
@@ -150,7 +184,7 @@ body {
 }
 
 .info {
-  margin-top: .5vh;
+  margin-top: 0;
 	margin-right: 5vw;
 	position: relative;
 	top:40px;
@@ -196,7 +230,7 @@ section {
 	height: 100%;
 	width: auto;
   margin-top: 0 !important;
-	margin-right: 1vw;
+	margin-right: 6vw;
 	display: inline-block;
 }
 
@@ -208,10 +242,10 @@ section {
 	height: 70vh;
 	width: 73vw;
   z-index: 0;
-  overflow: hidden;
-	margin-right: 3vw;
+	margin-right: 6vw;
 	display: inline-block;
 }
+
 
 .thumbnail > img {
 	position: absolute;
@@ -235,7 +269,40 @@ section {
   left: 150px;
 	position: relative;
 	height: 100vh;
-	width: 135px;
+	width: 140px;
   z-index: 0;
   overflow: visible;
+}
+
+.project:hover {
+  /*-webkit-box-shadow: inset 0px 2px 0px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: inset 0px 2px 0px 0px rgba(0,0,0,0.75);
+box-shadow: inset 0px 2px 0px 0px rgba(0,0,0,0.75);*/
+}
+
+@media screen and (max-width: 760px) {
+  .tip {
+    display: none;
+  }
+  .name {
+    position: fixed !important;
+  }
+  body {
+    width: 100% !important;
+    overflow: hidden;
+  }
+
+  .app {
+    width: 500% !important;
+    height: 100%;
+  }
+
+  .project {
+    width: 100px;
+  }
+
+
+
+
+
 }
