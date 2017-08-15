@@ -26,14 +26,11 @@ $(document).ready(function(){
 
       });
 
-      $(".name").click(function() {
-        $(".about").toggle();
-        // $("body").scrollLeft(0);
-        // $(".thumbnail,.project").show();
-        // $(".info,.images,.date,.ptitle").hide();
-        // $(".back,.down,.up").hide();
-        // $(".tip").fadeOut(200);
-   		});
+      $(".name").mouseover(function() {
+        $(".about").show();
+   		}).mouseout(function(){
+        $(".about").hide();
+      });
 
 
 
@@ -138,6 +135,14 @@ Prismic.Api('https://dillonfroelich.prismic.io/api', function (err, Api) {
 				$(".back,.down,.up").hide();
         $(".tip").fadeOut(200);
 			});
+
+      // $(".thumbnail > img").mouseover(function() {
+      //   $(".thumbnail > img").not(this).css("width","90%");
+      //   $(this).css("width","100%");
+      //
+   	// 	}).mouseout(function(){
+      //   $(".thumbnail > img").css("width","100%");
+      // });
 
     });
 

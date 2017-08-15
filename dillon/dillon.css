@@ -197,13 +197,21 @@ box-shadow: none;
   -webkit-columns: 100px 6;
   -moz-columns: 100px 6;
   columns: 100px 6;
-  -webkit-column-fill: auto; /* Chrome, Safari, Opera */
-  -moz-column-fill: auto; /* Firefox */
-  column-fill: auto;
+  -webkit-column-fill: auto !important; /* Chrome, Safari, Opera */
+  -moz-column-fill: auto !important; /* Firefox */
+  column-fill: auto !important;
 }
 
 .info > p {
   position: relative;
+}
+
+.info > .block-img > img{
+  position: relative;
+  max-height: 58vh;
+  width: auto;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
 }
 
 .images {
@@ -230,7 +238,7 @@ section {
 	height: 100%;
 	width: auto;
   margin-top: 0 !important;
-	margin-right: 6vw;
+	margin-right: 1vw;
 	display: inline-block;
 }
 
@@ -242,23 +250,27 @@ section {
 	height: 70vh;
 	width: 73vw;
   z-index: 0;
-	margin-right: 6vw;
+	margin-right: 1vw;
 	display: inline-block;
 }
 
 
 .thumbnail > img {
 	position: absolute;
-	bottom: 0;
+	bottom: 8vh;
 	width:100%;
 	height: auto;
-	-webkit-transition: all .2s ease-in-out;
-  -moz-transition: all .2s ease-in-out;
-  -o-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  left: 50%;
+	-webkit-transition: all .12s ease-in-out;
+  -moz-transition: all .12s ease-in-out;
+  -o-transition: all .12s ease-in-out;
+  transition: all .12s ease-in-out;
+  transform:translate(-50%,0%);
+  -webkit-transform:translate(-50%,0%);
 }
 
 .thumbnail >img:hover {
+  width: 98%;
 }
 
 .project {
@@ -269,7 +281,7 @@ section {
   left: 150px;
 	position: relative;
 	height: 100vh;
-	width: 140px;
+	width: 130px;
   z-index: 0;
   overflow: visible;
 }
