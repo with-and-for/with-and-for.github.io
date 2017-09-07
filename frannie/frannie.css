@@ -308,7 +308,7 @@ body {
   top: 15vh;
   height: 70vh;
   width: auto;
-  z-index: 999;
+  z-index: 999 !important;
   left: 50%;
   transform:translate(-50%,0%);
   -webkit-transform:translate(-50%,0%);
