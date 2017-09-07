@@ -229,6 +229,10 @@ body {
 -webkit-transform:translate(-50%,-50%);
 }
 
+.line {
+  text-decoration: underline;
+}
+
 .archiveImage > img {
   z-index: 999 !important;
   position: relative;
