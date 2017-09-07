@@ -2,20 +2,16 @@
 
 $(document).ready(function(){
 
-
 Prismic.Api('https://frannielogan.prismic.io/api', function (err, Api) {
     Api.form("everything")
     .ref(Api.master())
-    .query(Prismic.Predicates.at("document.type", "project"))                                                                 
+    .query(Prismic.Predicates.at("document.type", "project"))
     .submit(function (err, response) {
       var results = response.results;
       var body = $("body");
-      var titles = $(".titles");
-
-
 
       for (var i = 0; i < results.length; i++) {
-        
+
         number = results[i].getNumber("project.number");
         title = results[i].getStructuredText("project.title").asText();
         year = results[i].getStructuredText("project.year").asText();
@@ -25,133 +21,172 @@ Prismic.Api('https://frannielogan.prismic.io/api', function (err, Api) {
 
         var titleP = $("<p class='title'></p>");
         var infoP = $("<p class='info'></p>");
-        var gallery = $("<div class='main-carousel'></div>");
+        var gallery = $("<div class='container'></div>");
         var project = $("<div class='project'></div>");
         var numberP = $("<p style='display:none;' class='number'></p>");
+        var projectD = $("<div class='projectzone'></div>");
 
         numberP.append(number);
         titleP.append(title,numberP);
-        infoP.append(year,desc);
-        gallery.append(images);
-        project.attr("rel",'div'+(i+1)).append(titleP,gallery,infoP,numberP);
-
-        body.append(project,titles);
-
-        // append to both //
-
-        $(titleP).css("background-color",color).attr("target",i+1).append(numberP).appendTo(titles,project);
-
-       	
-      
-
+        infoP.append(desc);
+        $(images).addClass("gImage").addClass("carousel-cell").appendTo(project);
+        project.append(numberP);
+        body.append(project,titleP,infoP);
       }
 
-      $(".main-carousel > section").addClass("carousel-cell");
-
-      var $mainCarousel = $('.main-carousel').flickity({
+      var $mainCarousel = $('.project').flickity({
         cellAlign: 'center',
-        contain: false,
+        contain: true,
         freeScrolling: true,
-        wrapAround:true,
+        wrapAround: true,
         prevNextButtons: false,
         resize: false
       });
 
-
-      var $divs = $(".title");
-      var ordered = $divs.sort(function (a, b) {
-        return $(b).find(".number").text() - $(a).find(".number").text();
-      });
-      $(ordered).appendTo(".titles");
-
-
-      $("body").on("click",".title",function(){
-        var self = $(this);
-        $mainCarousel.css("opacity","1");
-        $(".project").not(this).css("display","none");
-        $(".clicked").remove();
-        $('.project[rel=div' + self.attr('target') +']').css("display","inline");
-        $(".info").show();
-        setTimeout(function(){
-          $(self).clone(true).addClass("clicked").appendTo("body");
-          $(".up").show();
-        },450);
-      });
-
-      $('body').on( 'click', ".previous", function() {
-      $mainCarousel.flickity('previous');
-      });
-      // next
-      $('body').on( 'click', ".next", function() {
-      $mainCarousel.flickity('next');
-      });
-
-      $(".title:first-child").css("text-decoration","underline");
-
-     var clicked = 0;
+      // $('.project').on( 'click', ".previous", function() {
+      //   $mainCarousel.flickity('previous');
+      // });
+      //
+      // $('.project').on( 'click', ".next", function() {
+      //   $mainCarousel.flickity('next');
+      // });
 
       $(".title").click(function(){
-        var height = $(window).height();
-        $(".previous,.next").show();
-        $("html,body").animate({scrollTop:height},400);
-        clicked = 1;
+        console.log("hello");
+        $(".archive,.about").hide();
+        $(".project,.infoButton").show();
       });
 
-    $(".title:first-child").click(function(){
-      $(".previous,.next").hide();
-    });
+      $(".infoButton").mouseover(function(){
+        $(".info").show();
+      }).mouseout(function(){
+        $(".info").hide();
+      });
 
-
-      $("html,body").bind("mousewheel", function() {
-       if (clicked === 0) {
-          return false;
-        } else {
-          return true;
-        }
-       });
-
-      $(document).bind("touchmove", function(e) {        
-       if (clicked === 0) {
-          e.preventDefault();
-        } else {
-          return true;
-        }
-       });
-
-
-      $(window).scroll(function(){
-        var height = $(window).height();
-        if ($(window).scrollTop() > height) {
-          $(".up").show();
-        } else {
-          $(".clicked").remove();
-          $(".up").hide();
-          
-        }
-      })
-
-
-      
-
-      
 
     });
 
-
-    
   }, "MC5XVlVfNmlNQUFKZG4wTlVX.De-_vXbvv70a77-977-9JWTvv71BR--_ve-_vXwu77-9TBPvv73vv70ZKUkPV--_ve-_vTJKNV8");
 
-// static elements //
+  Prismic.Api('https://frannielogan.prismic.io/api', function (err, Api) {
+      Api.form("everything")
+      .ref(Api.master())
+      .query(Prismic.Predicates.at("document.type", "archive_post"))
+      .submit(function (err, response) {
+        var results = response.results;
+        var body = $("body");
+        var titles = $(".titles");
+        var archive = $("<div class='archive'></div>");
 
-      $(".about").click(function(){
-        var height = $(window).height();
-        $("html,body").animate({scrollTop:height+700},500);
+
+
+        for (var i = 0; i < results.length; i++) {
+
+          image = results[i].getImage("archive_post.image").asHtml();
+          description = results[i].getStructuredText("archive_post.description").asHtml();
+
+          var descP = $("<p class='descP'></p>");
+          var imageD = $("<div class='archiveImage'></div>");
+          var postD = $("<div class='archivepost'></div>");
+
+
+          imageD.append(image);
+          descP.append(description);
+          postD.append(imageD,descP);
+          archive.append(postD);
+          body.append(archive);
+
+        }
+        var $grid = $('.archive').imagesLoaded( function() {
+            // init Masonry after all images have loaded
+            $grid.masonry({
+              itemSelector: '.grid-item',
+              percentPosition: true
+            });
+          });
+
+        // only for larger devices //
+
+        if ($(window).width() > 400) {
+
+        $(".archiveImage > img").mouseover(function(){
+          $(".archiveImage > img").not(this).css("opacity",".5");
+        }).mouseout(function(){
+          $(".archiveImage > img").not(this).css("opacity","1");
+        })
+
+        $(".archiveImage > img").click(function(event) {
+          $(this).clone().addClass("view").appendTo(".archive");
+          $(".out").show();
+
+				});
+
+        $("body").on("click",".out",function(){
+          $(".view").remove();
+          $(".archiveImage > img").css("opacity","1");
+          $(".out").hide();
+        });
+
+        } else {
+
+          // ha ! nothing ! //
+
+        }
+
+
+
+
+
+    });
+    }, "MC5XVlVfNmlNQUFKZG4wTlVX.De-_vXbvv70a77-977-9JWTvv71BR--_ve-_vXwu77-9TBPvv73vv70ZKUkPV--_ve-_vTJKNV8");
+    Prismic.Api('https://frannielogan.prismic.io/api', function (err, Api) {
+        Api.form("everything")
+        .ref(Api.master())
+        .query(Prismic.Predicates.at("document.type", "about"))
+        .submit(function (err, response) {
+          var results = response.results;
+          var body = $("body");
+          var titles = $(".titles");
+          var about = $("<div class='about'></div>");
+
+
+
+          for (var i = 0; i < results.length; i++) {
+
+            image = results[i].getImage("about.image").asHtml();
+            description = results[i].getStructuredText("about.about").asHtml();
+
+            var imageD = $("<div class='aboutImage'></div>");
+            var infoD = $("<div class='aInfo'></div>");
+
+            imageD.append(image);
+            infoD.append(description);
+            about.append(imageD,infoD);
+            body.append(about);
+
+          }
+
+      });
+      }, "MC5XVlVfNmlNQUFKZG4wTlVX.De-_vXbvv70a77-977-9JWTvv71BR--_ve-_vXwu77-9TBPvv73vv70ZKUkPV--_ve-_vTJKNV8");
+
+      var height = $(window).height();
+
+      $(".aDown").click(function(){
+        console.log("hello");
+        $(".archive").show().scrollTop(0);
+        $(".project,.about,.infoButton").hide();
       });
 
-      $(".up").click(function(){
-        $("html,body").animate({scrollTop:0},500);
+      $(".aboutDown").click(function(){
+        console.log("hello");
+        $(".archive,.project,.infoButton").hide();
+        $(".about").show();
       });
 
 
 
-}); // end of document ready //
+
+
+
+
+});

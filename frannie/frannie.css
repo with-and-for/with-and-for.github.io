@@ -1,13 +1,13 @@
-::-webkit-scrollbar { 
-    display: none; 
+::-webkit-scrollbar {
+    display: none;
 }
 
-::-moz-scrollbar { 
-    display: none; 
+::-moz-scrollbar {
+    display: none;
 }
 
-::-scrollbar { 
-    display: none; 
+::-scrollbar {
+    display: none;
 }
 
 ::-moz-selection { background-color: none; color: #006bff ; }
@@ -26,53 +26,80 @@ body {
 	overflow: scroll;
 }
 
-.up {
-	background-color: none;
-	padding: 1%;
-	display: none;
-	z-index: 999;
-	position: fixed;
-	left: 4vw;
-	top: 2%;
-	width: 15px;
-	cursor: pointer;
-	font-size: 20;
+.projectzone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #032863;
+  width: 100vw;
+  height: 100vh !important;
+  overflow: hidden !important;
 }
 
-.previous,.next {
-	fill: red;
-	width: 70px;
-	height: auto;
-	padding: .5%;
-	cursor: pointer;
-	z-index: 999;
-	position: absolute;
-	top: 160vh;
-	font-size: 16;
-	 -webkit-transition: all .2s ease-in-out;
-  -moz-transition: all .2s ease-in-out;
-  -o-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+.archive {
+  display: none;
+  z-index: 998;
+  background-color: transparent;
+  position: relative;
+  width: 85vw;
+  height: auto;
+  float: top;
+  left: 15vw;
+  top: 0;
+  margin-top: 0;
+  min-height: 100vh;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
-.previous {
-	left: 4vw;
+.aDown {
+  font-size: 28;
+  position: fixed;
+  top: 6vh;
+  left: 10px;
+  margin-top: 0;
+  cursor: pointer;
+  margin-left: 0;
+  z-index: 999 !important;
 }
 
-.next {
-	right: 4vw;
+.aDown:hover,.aboutDown:hover,.title:hover,.infoButton:hover {
+  text-decoration: underline;
+}
+
+.aboutDown {
+  font-size: 28;
+  position: fixed;
+  top: 12vh;
+  left: 10px;
+  margin-top: 0;
+  cursor: pointer;
+  margin-left: 0;
+  z-index: 999 !important;
+}
+
+.infoButton {
+  z-index: 999;
+  position: absolute;
+  margin-top: 0;
+  top: 0;
+  right: 10px;
+  font-size: 25;
+  cursor: pointer;
 }
 
 
 .about {
 	text-decoration: underline;
 	display: inline;
-	font-size: 16;
+	font-size: 25;
 	cursor: pointer;
 	z-index: 999;
 	position: absolute;
-	left: 4vw;
-	top: 206vh;
+  margin-left: 0;
+	left: 1.75vw;
+	top: 185vh;
+  color: white;
 }
 
 .project {
@@ -81,147 +108,216 @@ body {
 	margin: 0;
 	width: 100vw;
 	height: 100vh;
-	position: relative;
-	left: 0;
-	top: 0vh;
-}
-
-.titles {
-	margin: 0;
-	margin-top: 0;
-	cursor: pointer;
 	position: absolute;
-	background-color: none;
-	color: black;
-	left: 20vw;
-	height: 100vh;
-	width: 10vw;
-	left: 45vw;
-	text-align: center;
+	left: 0;
 	top: 0;
-	font-size: 16;
 }
 
 .info {
-	display: none;
-	margin-top: 10vh;
-	padding-bottom: 5%;
-	top: 90vh;
-	text-align: left;
-	position: relative;
-	left: 10vw;
+  display: none;
+  margin: 0;
+	top: 0;
+	position: absolute;
+	left: 12.5vw;
 	width: 80vw !important;
 	height: auto;
-	font-size: 25;
-	background-color: none;
+	font-size: 28;
+  color: black;
+  z-index: 999;
+}
+
+.info > p {
+  margin-top: 0;
 }
 
 .title {
+  cursor: pointer;
+  z-index: 999;
+  font-size: 28;
+  position: fixed;
+  top: 0vh;
+  left: 10px;
 	margin: 0;
-	padding: 20px;
-	  -webkit-transition: all .15s ease-in-out;
-  -moz-transition: all .15s ease-in-out;
-  -o-transition: all .15s ease-in-out;
-  transition: all .15s ease-in-out;
+  margin-left: 0 !important;
 }
 
 .title:hover {
 	background-color: none !important;
-	margin-top: 8%;
-	margin-bottom: 8%;
 }
 
 .title:first-child:hover {
 	margin-top: 0 !important;
 }
 
-.clicked {
-	cursor: none;
-	pointer-events: none !important;
-	text-align: center;
-	margin-top: 0 !important;
-	background-color: transparent !important;
-	color: black;
-	position: fixed;
-	top: 0;
-	width: 100%;
-	left: 50%;
-	font-size: 25;
-	text-decoration: none;
-	transform:translate(-50%,0%);
-  -webkit-transform:translate(-50%,0%);
+.container {
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 95;
 }
 
-.clicked:hover {
-	pointer-events: none !important;
-	color: black;
+.left {
+  position: relative !important;
+  display: inline-block !important;
+  float: left !important;
+  left: 90vw !important;
+  width: 3vw !important;
+  height: auto !important;
 }
 
-.main-carousel {
-	top: 100vh;
-	background-color: none;
-	opacity: 0;
-	position: relative;
-	height: 100vh;
-	width: 100vw;
-	left: 0;
-	margin-bottom: 0%;
-	margin-top: 10%;
+.focus {
+  z-index: 999;
+  height: 74vh !important;
+  width: auto !important;
+  -webkit-transition: all .25s ease-in-out !important;
+  -moz-transition: all .25s ease-in-out !important;
+  -o-transition: all .25s ease-in-out !important;
+  transition: all .25s ease-in-out !important;
+}
+
+.descP {
+  position: relative;
+  float: left;
+  width: 100%;
+  font-size: 20;
+  display: none;
 }
 
 .carousel-cell {
-	background-color: none;
-	top:0%;
-	height: 100%;
-	width: auto;
-	float: left;
-	z-index: 999;
-	margin-left: 6%;
-	margin-right: 6%;
-	left: 0;
-	background-color:none;
-}
-
-.carousel-cell > img {
-	position: relative;
-	top: 50%;
-	transform:translate(0%,-50%);
-  -webkit-transform:translate(0%,-50%);
-}
-
-
-/*flickity stuff*/
-
-
-/* big buttons, no circle */
-.flickity-prev-next-button {
-  cursor: pointer;	
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: transparent;
-}
-.flickity-prev-next-button:hover {
-  background: transparent;
-}
-/* arrow color */
-.flickity-prev-next-button .arrow {
-  fill: black;
-}
-.flickity-prev-next-button.no-svg {
-  color: black;
-}
-/* hide disabled button */
-.flickity-prev-next-button:disabled {
-  display: none;
+  margin-right: 10vw;
+  margin-left: 10vw;
+  position: relative;
+  width: 65vw;
+  height: 100vh;
+  background-color: transparent;
 }
 
 .flickity-page-dots {
+  position: absolute;
+  bottom: 2vh;
+  margin: 0;
+}
+
+.flickity-page-dots > .dot{
+  /*display: none;*/
+  opacity: 1;
+  border-radius: 2px;
+  background-color: black !important;
+}
+
+.flickity-page-dots > .dot.is-selected{
+  /*display: none;*/
+  opacity: 1;
+  border-radius: 0;
+  background-color: white !important;
+  /*border: 2px solid black;*/
+}
+
+.gImage > img {
+  z-index: 999;
+  cursor: pointer;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  float: left;
+  height: 70vh;
+  width: auto;
+  transform:translate(-50%,-50%);
+-webkit-transform:translate(-50%,-50%);
+}
+
+.archiveImage > img {
+  z-index: 999 !important;
+  position: relative;
+  width: 100%;
+  height: auto;
+  left: 0vw;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  -webkit-backface-visibility: hidden;
+}
+
+.archivepost {
+  position: relative;
+  top: 10vh;
+  left: 0;
+  width: 33vw;
+  height: auto;
+  cursor: pointer;
+  z-index: 998;
+  float: left;
+  margin-right: 5vw;
+  margin-bottom: 5vh;
+}
+
+.about {
+  position: absolute;
   display: none;
+  width: 100vw;
+  height: auto;
+  left: 0;
+  top: 0 !important;
+  margin-top: 0;
+}
+
+.aboutImage > img {
+  position: absolute;
+  left: 18vw;
+  top: 12vh;
+  height: auto;
+  width: 27vw;
+}
+
+.aInfo {
+  margin-top: 0;
+  margin: 0;
+  position: absolute;
+  color: black;
+  top: 12vh;
+  right: 18vw;
+  width: 30vw;
+}
+
+.aInfo > p {
+  /*position: relative;*/
+  margin: 0;
+  margin-top: 0;
+}
+
+.out {
+  position: fixed !important;
+  top: 5px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 999 !important;
+}
+
+.view {
+  position: fixed;
+  top: 15vh;
+  height: 70vh;
+  width: auto;
+  z-index: 999;
+  left: 50%;
+  transform:translate(-50%,0%);
+  -webkit-transform:translate(-50%,0%);
 }
 
 
+
+
 @media screen and (max-width: 736px) {
+
+  .infoButton,.aboutDown,.aDown {
+    z-index: 999 !important;
+  }
 
 	.main-carousel {
 		background-color: none;
@@ -252,10 +348,6 @@ body {
         display: none !important;
 	}
 
-	.about {
-		top: 208%;
-	}
-
 
 	.info {
 		background-color: none;
@@ -268,6 +360,34 @@ body {
 		width: 40vw;
 		left: 30vw;
 	}
+
+  .archive {
+    width: 100vw;
+  }
+
+  .archivepost {
+    left: 0vw !important;
+    width: 80vw;
+  }
+
+  .aboutImage > img {
+    position: relative;
+    display: inline;
+    top: 15vh;
+    width: 80vw!important;
+    height: auto;
+    left: 10vw;
+    margin-bottom: 10vh;
+    z-index: -1;
+  }
+
+  .aInfo {
+    position: relative;
+    float: left;
+    display: inline;
+    width: 80vw;
+    left: 10vw;
+  }
 
 
 }
