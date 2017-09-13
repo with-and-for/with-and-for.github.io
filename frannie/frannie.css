@@ -69,12 +69,12 @@ body {
 
 .prev,.next {
   margin: 0;
-  cursor: pointer;
+  cursor: pointer !important;
   z-index: 999 !important;
   width: 50px;
   height: 50px;
   position: absolute;
-  top: 48%;
+  top: 47%;
 }
 
 .prev {
@@ -104,20 +104,6 @@ body {
   right: 10px;
   font-size: 25;
   cursor: pointer;
-}
-
-
-.about {
-	text-decoration: underline;
-	display: inline;
-	font-size: 25;
-	cursor: pointer;
-	z-index: 999;
-	position: absolute;
-  margin-left: 0;
-	left: 1.75vw;
-	top: 185vh;
-  color: white;
 }
 
 .project {
@@ -175,25 +161,6 @@ body {
   top: 0;
   left: 0;
   z-index: 95;
-}
-
-.left {
-  position: relative !important;
-  display: inline-block !important;
-  float: left !important;
-  left: 90vw !important;
-  width: 3vw !important;
-  height: auto !important;
-}
-
-.focus {
-  z-index: 999;
-  height: 74vh !important;
-  width: auto !important;
-  -webkit-transition: all .25s ease-in-out !important;
-  -moz-transition: all .25s ease-in-out !important;
-  -o-transition: all .25s ease-in-out !important;
-  transition: all .25s ease-in-out !important;
 }
 
 .descP {
@@ -303,9 +270,11 @@ body {
   top: 12vh;
   right: 18vw;
   width: 30vw;
+  padding-bottom: 5vh;
 }
 
 .aInfo > p {
+  font-size: 28;
   /*position: relative;*/
   margin: 0;
   margin-top: 0;
@@ -366,7 +335,7 @@ body {
 	}
 
 
-	.previous,.next {
+	.prev,.next {
         display: none !important;
 	}
 
