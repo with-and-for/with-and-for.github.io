@@ -67,6 +67,24 @@ body {
   text-decoration: underline;
 }
 
+.prev,.next {
+  margin: 0;
+  cursor: pointer;
+  z-index: 999 !important;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 48%;
+}
+
+.prev {
+  left: 2vw;
+}
+
+.next {
+  right: 1vw;
+}
+
 .aboutDown {
   font-size: 28;
   position: fixed;

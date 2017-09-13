@@ -43,13 +43,21 @@ Prismic.Api('https://frannielogan.prismic.io/api', function (err, Api) {
         resize: false
       });
 
+      $('.prev').on( 'click', function() {
+        $mainCarousel.flickity('previous');
+      });
+
+      $('.next').on( 'click', function() {
+        $mainCarousel.flickity('next');
+      });
+
       $(".title").addClass("line");
 
       $(".title").click(function(){
         $(".aboutDown,.aDown").removeClass("line");
         $(this).addClass("line");
         $(".archive,.about").hide();
-        $(".project,.infoButton").show();
+        $(".project,.infoButton,.prev,.next").show();
         $(".view").remove();
         $(".archiveImage > img").css("opacity","1");
         $(".out").hide();
@@ -173,7 +181,7 @@ Prismic.Api('https://frannielogan.prismic.io/api', function (err, Api) {
         $(".aboutDown,.title").removeClass("line");
         $(this).addClass("line");
         $(".archive").show().scrollTop(0);
-        $(".project,.about,.infoButton").hide();
+        $(".project,.about,.infoButton,.prev,.next").hide();
       });
 
       $(".aboutDown").click(function(){
@@ -183,7 +191,7 @@ Prismic.Api('https://frannielogan.prismic.io/api', function (err, Api) {
         $(".about").show();
         $(".view").remove();
         $(".archiveImage > img").css("opacity","1");
-        $(".out").hide();
+        $(".out,.prev,.next").hide();
       });
 
 
