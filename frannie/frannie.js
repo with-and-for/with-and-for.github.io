@@ -26,7 +26,6 @@ Prismic.Api('https://frannielogan.prismic.io/api', function (err, Api) {
         titleP.append(title,numberP);
         infoP.append(desc);
         $(images).addClass("gImage").addClass("carousel-cell").appendTo(project);
-        project.append(numberP);
         body.append(project,titleP,infoP);
       }
 
