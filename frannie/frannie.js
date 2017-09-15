@@ -75,14 +75,17 @@ Prismic.Api('https://frannielogan.prismic.io/api', function (err, Api) {
         var titles = $(".titles");
         var archive = $("<div class='archive'></div>");
         for (var i = 0; i < results.length; i++) {
+          number = results[i].getNumber("archive_post.order");
           image = results[i].getImage("archive_post.image").asHtml();
           description = results[i].getStructuredText("archive_post.description").asHtml();
           var descP = $("<p class='descP'></p>");
+          var order = $("<p style='display:none' class='order'></p>");
           var imageD = $("<div class='archiveImage'></div>");
           var postD = $("<div class='archivepost'></div>");
+          order.append(number);
           imageD.append(image);
           descP.append(description);
-          postD.append(imageD,descP);
+          postD.append(imageD,descP,order);
           archive.append(postD);
           body.append(archive);
         }
@@ -93,6 +96,14 @@ Prismic.Api('https://frannielogan.prismic.io/api', function (err, Api) {
               percentPosition: true
             });
           });
+
+        var $divs = $("div.archivepost");
+
+        var ordered = $divs.sort(function (a, b) {
+         return $(b).find(".order").text() - $(a).find(".order").text();
+        });
+
+        $(ordered).appendTo(".archive");
 
         // only for larger devices //
 
