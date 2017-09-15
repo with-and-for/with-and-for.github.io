@@ -53,10 +53,10 @@ body {
 }
 
 .aDown {
-  font-size: 28;
+  font-size: 20;
   position: fixed;
-  top: 6vh;
-  left: 10px;
+  top: 0vh;
+  left: 100px;
   margin-top: 0;
   cursor: pointer;
   margin-left: 0;
@@ -71,8 +71,8 @@ body {
   margin: 0;
   cursor: pointer !important;
   z-index: 999 !important;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   position: absolute;
   top: 47%;
 }
@@ -86,10 +86,10 @@ body {
 }
 
 .aboutDown {
-  font-size: 28;
+  font-size: 20;
   position: fixed;
-  top: 12vh;
-  left: 10px;
+  top: 0vh;
+  left: 200px;
   margin-top: 0;
   cursor: pointer;
   margin-left: 0;
@@ -102,7 +102,7 @@ body {
   margin-top: 0;
   top: 0;
   right: 10px;
-  font-size: 25;
+  font-size: 20;
   cursor: pointer;
 }
 
@@ -122,10 +122,10 @@ body {
   margin: 0;
 	top: 0;
 	position: absolute;
-	left: 12.5vw;
-	width: 80vw !important;
+	left: 300px;
+	width: 50vw !important;
 	height: auto;
-	font-size: 28;
+	font-size: 20;
   color: black;
   z-index: 999;
 }
@@ -137,7 +137,7 @@ body {
 .title {
   cursor: pointer;
   z-index: 999;
-  font-size: 28;
+  font-size: 20;
   position: fixed;
   top: 0vh;
   left: 10px;
@@ -168,7 +168,6 @@ body {
   float: left;
   width: 100%;
   font-size: 20;
-  display: none;
 }
 
 .carousel-cell {
@@ -199,6 +198,16 @@ body {
   border-radius: 0;
   background-color: white !important;
   /*border: 2px solid black;*/
+}
+
+.gImage > p {
+  position: absolute;
+  left: 13.5vw;
+  width: 40vw;
+  font-size: 20;
+  top: 45%;
+  transform:translate(0%,-50%);
+  -webkit-transform:translate(0%,-50%);
 }
 
 .gImage > img {
@@ -274,7 +283,7 @@ body {
 }
 
 .aInfo > p {
-  font-size: 28;
+  font-size: 20;
   /*position: relative;*/
   margin: 0;
   margin-top: 0;
@@ -282,10 +291,10 @@ body {
 
 .out {
   position: fixed !important;
-  top: 5px;
-  right: 5px;
-  width: 30px;
-  height: 30px;
+  top: 30px;
+  right: 30px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   z-index: 999 !important;
 }
@@ -313,8 +322,18 @@ body {
 
   .infoButton,.aboutDown,.aDown {
     z-index: 999 !important;
-    font-size: 28 !important;
+    font-size: 20 !important;
     position: fixed !important;
+  }
+
+  .aDown {
+    left: 49%;
+    transform:translate(-50%,0%);
+    -webkit-transform:translate(-50%,0%);
+  }
+
+  .aboutDown {
+    left: 84% !important;
   }
 
 	.up {
@@ -334,13 +353,11 @@ body {
 		height: auto;
 	}
 
-
 	.prev,.next {
         display: none !important;
 	}
 
-
-	.infoButton {
+	.infoButton,.info {
 		display:none !important;
 	}
 
@@ -378,6 +395,11 @@ body {
 
   .flickity-page-dots {
     display: none;
+  }
+
+  .gImage > p {
+    width: 70vw;
+    left: 5vw;
   }
 
 }
