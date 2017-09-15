@@ -85,7 +85,7 @@ Prismic.Api('https://frannielogan.prismic.io/api', function (err, Api) {
           order.append(number);
           imageD.append(image);
           descP.append(description);
-          postD.append(imageD,descP,order);
+          postD.append(descP,imageD,order);
           archive.append(postD);
           body.append(archive);
         }
@@ -109,22 +109,23 @@ Prismic.Api('https://frannielogan.prismic.io/api', function (err, Api) {
 
         if ($(window).width() > 400) {
 
-        $(".archiveImage > img").mouseover(function(){
-          $(".archiveImage > img,.descP").not(this).css("opacity",".5");
-          $(".descP",this).css("opacity","1");
-        }).mouseout(function(){
-          $(".archiveImage > img,.descP").not(this).css("opacity","1");
-        })
 
-        $(".archiveImage > img").click(function(event) {
-          $(this).clone().addClass("view").appendTo(".archive");
-          $(".out").show();
+        $(".archiveImage > img").click(function() {
+          if ($(".archiveImage > img").hasClass("no")){
+            // no //
+          } else {
+            $(this).clone().addClass("view").appendTo(".archive");
+            $(".out").show();
+            $(".archiveImage > img,.descP").css("opacity",".15");
+            $(".archiveImage > img").not(this).addClass("no");
+          }
 
 				});
 
         $("body").on("click",".out",function(){
           $(".view").remove();
-          $(".archiveImage > img").css("opacity","1");
+          $(".archiveImage > img").removeClass("no");
+          $(".archiveImage > img,.descP").css("opacity","1");
           $(".out").hide();
         });
 
@@ -169,6 +170,7 @@ Prismic.Api('https://frannielogan.prismic.io/api', function (err, Api) {
         $(this).addClass("line");
         $(".archive").show().scrollTop(0);
         $(".project,.about,.infoButton,.prev,.next,.info").hide();
+        $(".archiveImage > img,.descP").removeClass("no").css("opacity","1");
       });
 
       $(".aboutDown").click(function(){
@@ -177,8 +179,20 @@ Prismic.Api('https://frannielogan.prismic.io/api', function (err, Api) {
         $(".archive,.project,.infoButton,.info").hide();
         $(".about").show();
         $(".view").remove();
-        $(".archiveImage > img").css("opacity","1");
+        $(".archiveImage > img,.descP").removeClass("no").css("opacity","1");
         $(".out,.prev,.next").hide();
       });
+
+      if( /Android|webOS|iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent) ) {
+         $(".aboutDown").text("About");
+      } else {
+
+      }
+
+      if ($(window).width() < 800 ) {
+         $(".aboutDown").text("About");
+      } else {
+
+      }
 
 });
