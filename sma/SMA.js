@@ -79,7 +79,7 @@ Prismic.Api('https://smarchitects.prismic.io/api', function (err, Api) {
 				order = results[i].getNumber("project_post.order");
         title = results[i].getStructuredText("project_post.title").asText();
 				date = results[i].getStructuredText("project_post.date").asText();
-				desc = results[i].getStructuredText("project_post.desc").asText();
+				desc = results[i].getStructuredText("project_post.desc").asHtml();
 				thumb = results[i].getImage("project_post.thumbnail").asHtml();
 				images = results[i].getGroup("project_post.images").asHtml();
 				var orderP = $("<p class='number' style='display:none'></p>");
@@ -136,7 +136,7 @@ Prismic.Api('https://smarchitects.prismic.io/api', function (err, Api) {
 											var top = offset.top;
 											console.log(top,height);
 											$(".project").css("width","40vw");
-											$(this).css("width","60vw");
+											$(this).css("width","52vw");
 											$(".images,.info").hide();
 											$(".thumbnail").show();
 											$(".thumbnail",this).hide();
