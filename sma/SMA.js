@@ -57,7 +57,7 @@ $(document).ready(function(){
 				});
 			} else {
 				$(".infoabout").click(function(){
-					$(".project,.info,.images,.close").hide();
+					$(".project,.info,.images,.close,.homegrid").hide();
 					$(".project").css("width","40vw");
 					$(".about,.thumbnail").show();
 					$(".infoabout").css("opacity","1");
@@ -75,6 +75,7 @@ Prismic.Api('https://smarchitects.prismic.io/api', function (err, Api) {
     .submit(function (err, response) {
       var results = response.results;
       var body = $("body");
+			var tops = [ ];
       for (var i = 0; i < results.length; i++) {
 				order = results[i].getNumber("project_post.order");
         title = results[i].getStructuredText("project_post.title").asText();
@@ -95,14 +96,38 @@ Prismic.Api('https://smarchitects.prismic.io/api', function (err, Api) {
 				thumbnail.append(thumb);
 				imagesD.append(images);
 				descD.append(titleP,dateP,desc);
-				project.append(orderP,titleP,dateP,descD,thumbnail,imagesD)
+				project.append(orderP,titleP,dateP,descD,thumbnail,imagesD);
+				// $(project).attr("target",i);
 				body.append(project);
+
+				var hello,top;
+				var hello = $(project).offset();
+				var top = hello.top;
+
+				tops.push(hello.top);
+					// var hello = $(project).offset();
+					// var = $(project).height();
+					// var top = hello.top;
+					//
+					// tops.push(hello.top);
+
+
       }
+
+console.log(tops);
+
+
+
+
 			var $divs = $("div.project");
       var ordered = $divs.sort(function (a, b) {
         return $(b).find(".number").text() - $(a).find(".number").text();
       });
       $(ordered).appendTo("body");
+
+
+
+
 			  if( /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) ) {
 											$(".project").click(function(){
 												$(".infoabout").css("opacity",".1");
@@ -124,10 +149,48 @@ Prismic.Api('https://smarchitects.prismic.io/api', function (err, Api) {
 										});
 
 				} else {
+
+					$(".images > section:first-child > img").clone().addClass("grid").appendTo(".homegrid").hide().delay(400).fadeIn(400);
+
+					var numElements;
+					var randomNum;
+					setInterval(function(){
+						var numElements = $('.grid').length;
+						var randomNum = Math.floor(Math.random()*numElements);
+						var randomNumm = Math.floor(Math.random()*numElements);
+						var randomNummm = Math.floor(Math.random()*numElements);
+						var randomNummmm = Math.floor(Math.random()*numElements);
+						$('.grid').css("opacity","1");
+						$('.grid:nth-child(' + randomNum + ')').not(this).css("opacity",".1");
+						$('.grid:nth-child(' + randomNumm + ')').not(this).css("opacity",".1");
+						$('.grid:nth-child(' + randomNummm + ')').not(this).css("opacity",".1");
+						$('.grid:nth-child(' + randomNummmm + ')').not(this).css("opacity",".1");
+					},4000);
+
+					$(window).on("load", function() {
+			    console.log("hello");
+					});
+
+
+
+
+					$(document).on("click",".grid",function(){
+
+							var num = $(this).index(".grid");
+							var offset = tops[num];
+							var height = $(window).height();
+							console.log(offset);
+
+
+
+						$("body").animate({scrollTop:  offset+height },500);
+					});
+
 										$(".pro").click(function(){
 											var height = $(window).height()-15;
 											$("body").animate({scrollTop:height},0);
 										});
+
 										$(".project").click(function(){
 											$(".infoabout").css("opacity",".1");
 											$(".close").show();
@@ -144,9 +207,10 @@ Prismic.Api('https://smarchitects.prismic.io/api', function (err, Api) {
 											$(".images,.info",this).show();
 											$("body").animate({scrollTop:top-15},500);
 										});
+
 									$(".name").click(function(){
 										$("body").animate({scrollTop:0},400);
-											$(".thumbnail").show();
+											$(".thumbnail,.homegrid").show();
 											$(".project").css("width","40vw");
 										$(".images,.info").hide();
 									});

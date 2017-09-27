@@ -28,6 +28,33 @@ body {
 	text-decoration: underline;
 }
 
+.homegrid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin-right: 5vw;
+  margin-left: 5vw;
+  margin-top: 20vh;
+}
+
+.grid {
+  cursor: pointer;
+  margin-top: 0;
+  z-index: 999;
+  position: relative;
+  width: auto;
+  height: 20vh;
+  margin-right: 2vw;
+  margin-bottom: 2vh;
+  -webkit-transition: opacity 2s ease-in-out;
+  -moz-transition: opacity 2s ease-in-out;
+  -o-transition: opacity 2s ease-in-out;
+  transition: opacity 2s ease-in-out;
+  -webkit-backface-visibility: hidden;
+}
+
 .home > img{
 	position: absolute;
 	left: 31vw;
@@ -130,6 +157,7 @@ body {
   -moz-transition: all .2s ease-in-out;
   -o-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
+  -webkit-backface-visibility: hidden;
 }
 
 .thumbnail > img:hover {
@@ -177,8 +205,17 @@ body {
 	right: 0;
 	margin-bottom: -0px;
 }
+@media screen and (max-width: 1050px) {
+  .grid {
+    height: 13vh;
+  }
+}
+
 
 @media screen and (max-width: 736px) {
+  .homegrid {
+    display: none;
+  }
 	.name {
 		left: 5vw;
 	}
