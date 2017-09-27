@@ -167,24 +167,24 @@ console.log(tops);
 						$('.grid:nth-child(' + randomNummmm + ')').not(this).css("opacity",".1");
 					},4000);
 
-					$(window).on("load", function() {
-			    console.log("hello");
-					});
+					// $(window).on("load", function() {
+			    // console.log("hello");
+					// });
 
 
 
 
-					$(document).on("click",".grid",function(){
-
-							var num = $(this).index(".grid");
-							var offset = tops[num];
-							var height = $(window).height();
-							console.log(offset);
-
-
-
-						$("body").animate({scrollTop:  offset+height },500);
-					});
+					// $(document).on("click",".grid",function(){
+					//
+					// 		var num = $(this).index(".grid");
+					// 		var offset = tops[num];
+					// 		var height = $(window).height();
+					// 		console.log(offset);
+					//
+					//
+					//
+					// 	$("body").animate({scrollTop:  offset+height },500);
+					// });
 
 										$(".pro").click(function(){
 											var height = $(window).height()-15;
