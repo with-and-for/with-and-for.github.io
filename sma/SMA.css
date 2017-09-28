@@ -243,6 +243,9 @@ body {
 
 
 @media screen and (max-width: 736px) {
+  .studio{
+    display: none;
+  }
   .homegrid {
     display: none;
   }
@@ -264,6 +267,8 @@ body {
 		left: 5vw;
 		margin-bottom: 22vh;
 		border-bottom: none;
+    transform:translate(0%,0%);
+    -webkit-transform:translate(0%,0%);
 	}
 
 	.close {

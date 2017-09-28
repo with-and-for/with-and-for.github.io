@@ -91,19 +91,20 @@ console.log(tops);
 
 
 			  if( /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) ) {
-											$(".project").click(function(){
-												$(".infoabout").css("opacity",".1");
-												$(".close").show();
-												var offset = $(this).offset();
-												var top = offset.top;
-												console.log(top);
-												$("body").animate({scrollTop:top-100},500);
-												$(".images,.info").hide();
-												$(".thumbnail").show();
-												$(".thumbnail",this).hide();
-												console.log("hello");
-												$(".images",this).show();
-											});
+					$(".project").click(function(){
+						$(".close").show();
+						var offset = $(this).offset();
+						var height = $(this).height();
+						var top = offset.top;
+						console.log(top,height);
+						$(".project").not(this).hide();
+						$(".images,.info").hide();
+						$(".thumbnail").show();
+						$(".thumbnail",this).hide();
+						console.log("hello");
+						$(".images,.info",this).show();
+						$("body").animate({scrollTop:-15},0);
+					});
 										$(".name").click(function(){
 											$("body").animate({scrollTop:0},400);
 												$(".thumbnail").show();
@@ -147,12 +148,13 @@ console.log(tops);
     });
   }, "MC5XWWRBd3ljQUFJbVZZZnFo.TO-_vXDvv73vv73vv73vv73vv71F77-9cu-_vWx1b--_ve-_vSpjdzFtG--_ve-_ve-_ve-_ve-_vWnvv71077-9");
  if( /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) ) {
-				 $(".close").click(function(){
-				  $(".info,.images").hide();
-				  $(".thumbnail").show();
-				  $(".close").hide();
-				  $(".infoabout").css("opacity","1");
-				 });
+	 $(".close").click(function(){
+		$(".project").show();
+		$(".info,.images").hide();
+		$(".thumbnail").show();
+		$(".close").hide();
+		$(".infoabout").css("opacity","1");
+	 });
 				 $(".name").click(function(){
 			 		$(".about,.close").hide();
 			 		$(".project").show();
