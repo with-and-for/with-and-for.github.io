@@ -28,6 +28,25 @@ body {
 	text-decoration: underline;
 }
 
+.studio {
+  list-style: none;
+  position: fixed;
+  margin-top: 0;
+  top: 15px;
+  right: 9vw;;
+  text-align: center;
+  cursor: pointer;
+  width: 60px;
+}
+
+.studio > p {
+  margin-top: 0;
+}
+
+.studio:first-child:hover {
+  text-decoration: underline;
+}
+
 .homegrid {
   position: absolute;
   top: 0;
@@ -70,7 +89,7 @@ body {
 	display: none;
 	position: fixed;
 	top: 17px;
-	left: 27.5vw;
+	left: 22vw;
 	width: 20px;
 	height: 20px;
 	-webkit-transition: all .2s ease-in-out;
@@ -93,10 +112,14 @@ body {
 
 .pro {
 	margin-top: 0;
-	position: absolute;
-	left: 31vw;
+	position: fixed;
+	right: 16vw;
 	top: 15px;
 	cursor: pointer;
+}
+
+.tab:hover {
+  text-decoration: underline !important;
 }
 
 .infoabout {
@@ -111,47 +134,54 @@ body {
 	opacity: 1 !important;
 }
 
-.about {
+.about,.phil,.practice,.people {
+  display: none;
 	margin: 0;
-	margin-top: -5;
-	display: none;
 	position: fixed;
-	top: 0 !important;
+	top: 0px !important;
 	width: 40vw;
 	left: 31vw;
 	height: auto;
-	font-weight: 300;
+  z-index: 999 !important;
 }
 
-.about > p{
-	position: relative;
-	top: 0;
-	margin-top: 0;
+.practice > h1,.people > h1,.phil > h1,.practice > h2,.people > h2,.phil > h2 {
+  font-weight: 500;
+  font-size: 17 !important;
+}
+
+.practice > h2,.people > h2,.phil > h2 {
+  font-weight: 500 !important;
+  text-decoration: underline !important;
 }
 
 .project {
+  /*float: left;*/
 	z-index: 999;
 	margin: 0;
-	top: 100vh;
-	left: 31vw;
+	top: 15px;
+	left: 50.5vw;
 	position: relative;
-	width: 40vw;
+	width: 30vw;
 	height: auto;
 	margin-bottom: 10vh;
-	padding-bottom: 5vh;
+	padding-right: 2vw;
 	border-bottom: .2vh solid white;
 	-webkit-transition: width .4s ease-in-out;
   -moz-transition: width .4s ease-in-out;
   -o-transition: width .4s ease-in-out;
   transition: width .4s ease-in-out;
+  transform:translate(-50%,0%);
+  -webkit-transform:translate(-50%,0%);
 }
 
 .thumbnail > img{
 	top: 50px;
+  left: 0;
 	cursor: pointer;
 	display: inline;
 	width: 100%;
-	height: auto;
+	height:auto;
 	position: relative;
 	-webkit-transition: all .2s ease-in-out;
   -moz-transition: all .2s ease-in-out;
