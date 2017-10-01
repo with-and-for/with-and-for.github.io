@@ -9,6 +9,7 @@ Prismic.Api('https://adrianhinojosa.prismic.io/api', function (err, Api) {
     .submit(function (err, response) {
       var results = response.results;
       var body = $("body");
+      var rightside = $(".rightside");
 
       for (var i = 0; i < results.length; i++) {
 
@@ -17,19 +18,32 @@ Prismic.Api('https://adrianhinojosa.prismic.io/api', function (err, Api) {
 				var imageD = $("<div class='images'></div>");
      			imageD.append(images);
 					body.append(imageD);
+
+
+
+
+          $(".images > section > img").clone().addClass("newR").appendTo(".rightside");
+
+          var $img = $(".images > section > img,.rightside > img");
+          // var $imgR = $(".rightside > img");
+
+
+          $img.on('load', function(){
+            var height = $(this).height();
+            var width = $(this).width();
+            console.log($(this).height());
+            console.log(width, height);
+            if (width > height) {
+              $(this).addClass("landscape");
+            } else {
+              $(this).addClass("portrait");
+            }
+
+
+
+          });
+
       }
-
-			$(document).mousemove(function(){
-				var half = $(window).width()/2;
-				if (event.pageX < half){
-					$(".images > section > img").css("opacity",".2");
-				} else {
-					$(".images > section > img").css("opacity","1");
-				}
-			});
-
-
-
 
 
 
@@ -55,17 +69,18 @@ Prismic.Api('https://adrianhinojosa.prismic.io/api', function (err, Api) {
 					var info = $("<div class='info'></div>");
 	     			info.append(name,email,instagram);
 						body.append(info);
+
 	      }
 
 
-				$(document).mousemove(function(){
-					var half = $(window).width()/2;
-					if (event.pageX < half){
-						$("h1").css("color","#a5a5a5");
-					} else {
-						$("h1").css("color","#282828");
-					}
-				});
+				// $(document).mousemove(function(){
+				// 	var half = $(window).width()/2;
+				// 	if (event.pageX < half){
+				// 		$("h1").css("color","#a5a5a5");
+				// 	} else {
+				// 		$("h1").css("color","#282828");
+				// 	}
+				// });
 
 
 	    });

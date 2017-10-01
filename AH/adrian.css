@@ -15,12 +15,13 @@ html {
 	font-weight: 100;
 	margin: 0;
 	background-color: black;
-	color: #282828;
+	color: #a3a3a3;
+  word-wrap: break-word;
 }
 
 h1 {
 	font-weight: 300;
-	font-size: 15;
+	font-size: 14;
 	text-align: left;
 	z-index: 999;
 	-webkit-transition: all .4s ease-in-out;
@@ -33,12 +34,13 @@ body {
 	margin: 0;
 	width: 100vw;
 	height: 100vh;
+  overflow-x: hidden;
 }
 
 .info {
 	z-index: 999;
 	position: fixed;
-	left: 3vw;
+	left: 20px;
 	top: 50%;
 	transform:translate(0%,-50%);
   -webkit-transform:translate(0%,-50%);
@@ -50,25 +52,56 @@ body {
 
 .images {
 	/*border-left: 1px solid #282828;*/
-	padding-left: 3vw;
 	position: absolute;
-	width:44vw;
-	right: 3vw;
+	width:50vw;
+	left: 0;
 	height: auto;
 	-webkit-transition: all .4s ease-in-out;
   -moz-transition: all .4s ease-in-out;
   -o-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
+  overflow-x: visible;
+}
+
+.newR.landscape {
+  opacity: 0;
+}
+
+.rightside {
+	/*border-left: 1px solid #282828;*/
+	position: absolute;
+	width:50vw;
+	right: 0;
+	height: auto;
+	-webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  overflow-x: hidden;
+}
+
+
+
+.images > section > img,.rightside > img {
+	position: relative;
+	width: 80%;
+	height: auto;
 }
 
 .images > section > img {
-	position: relative;
-	width: 100%;
-	height: auto;
-	margin-bottom: 10vh;
-	left: 0%;
+  left: 0;
+}
+
+.rightside > img {
+  left: 20%;
 }
 
 .images > section:last-child > img {
 	margin-bottom: 0 !important;
+}
+
+.landscape {
+  width:100vw !important;
+  height: auto !important;
+  z-index: 999 !important;
 }
