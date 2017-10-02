@@ -309,9 +309,9 @@ iframe {
   font-size: 35;
 }
 
-.blog > .post {
+/*.blog > .post {
   margin-bottom: 20vh !important;
-}
+}*/
 
 .blog > .post > div > iframe {
   width: 48% !important;
@@ -322,7 +322,7 @@ iframe {
   position: relative;
   left: 10vw;
   top: 6.25vh;
-  margin-bottom: -5vh;
+  /*margin-bottom: -10vh !important;*/
   max-width: 48vw;
   font-weight: 900;
   font-size: 28;

@@ -135,12 +135,12 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
         title = results[i].getStructuredText("about_page.title").asHtml();
         description = results[i].getStructuredText("about_page.description").asHtml();
         groupName = results[i].getStructuredText("about_page.group_name").asHtml();
-        people = results[i].getGroup("about_page.people").asHtml();
+        // people = results[i].getGroup("about_page.people").asHtml();
 
         var peopleP = $("<div class='people'></div>");
 
-        peopleP.append(groupName,people);
-       	about.append(title,description,peopleP);
+        // peopleP.append(groupName,people);
+       	about.append(title,description);
         body.append(about);
 
       }
@@ -288,6 +288,18 @@ Prismic.Api('https://tiqe.prismic.io/api', function (err, Api) {
       });
 
       $(ordered).appendTo(".blog");
+
+      // var $img = $(".blog > post > div iframe");
+      //     // var $imgR = $(".rightside > img");
+      //
+      //
+      //     $img.on('load', function(){
+      //       if ($(this).length > 0) {
+      //           alert('frame exists');
+      //           $(this).append('<div class="icon">Icon</div>');
+      //         }
+      //         });
+
 
     });
 
