@@ -36,13 +36,7 @@ Prismic.Api('https://adrianhinojosa.prismic.io/api', function (err, Api) {
 
 
 if ($(window).width() > 736){
-  var $divs = $("div.images");
 
-var ordered = $divs.sort(function (a, b) {
- return $(a).find(".order").text() - $(b).find(".order").text();
-});
-
-$(ordered).appendTo("body");
 
 $(".images").hide();
 
@@ -57,6 +51,14 @@ setTimeout(function(){
   var length = $(".images").length;
   console.log(length);
   var click = 0;
+
+  var $divs = $("div.images");
+
+  var ordered = $divs.sort(function (a, b) {
+   return $(a).find(".order").text() - $(b).find(".order").text();
+  });
+
+  $(ordered).appendTo("body");
 
 
       $(".images").click(function () {
@@ -74,14 +76,6 @@ setTimeout(function(){
 
  } else {
 
-   var $divs = $("div.images");
-
- var ordered = $divs.sort(function (a, b) {
-  return $(a).find(".order").text() - $(b).find(".order").text();
- });
-
- $(ordered).appendTo("body");
-
  $(".images").hide();
 
  setTimeout(function(){
@@ -93,10 +87,18 @@ setTimeout(function(){
      var index = $(this).index(".images");
      $(this).attr("yo",index).css({"background":"url("+src[index]+")","background-size": "100vw auto","background-repeat":"repeat-y"});
    });
+
+   var $divs = $("div.images");
+
+   var ordered = $divs.sort(function (a, b) {
+    return $(a).find(".order").text() - $(b).find(".order").text();
+   });
+
+   $(ordered).appendTo("body");
+
    var length = $(".images").length;
    console.log(length);
    var click = 0;
-
 
    $(".images").click(function () {
      click++;
