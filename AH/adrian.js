@@ -52,7 +52,7 @@ setTimeout(function(){
 
   $(".images").each(function(){
     var index = $(this).index(".images");
-    $(this).attr("yo",index).css({"background":"url("+src[index]+")","background-size": "auto 100vh","background-repeat":"repeat-x"});
+    $(this).attr("yo",index).css({"background":"url("+src[index]+")","background-size": "auto 100vh","background-repeat":"repeat-x","background-position": "center","background-attachment": "fixed"});
   });
   var length = $(".images").length;
   console.log(length);
