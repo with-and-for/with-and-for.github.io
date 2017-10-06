@@ -104,7 +104,7 @@ if ($(window).width() > 736) {
 
    console.log(index,length);
      $(this).css({
-     "background-size": "100% auto",
+     "background-size": "100vw auto",
      "background-repeat":"repeat-y",
      "background-position": "center",
      "background-attachment": "fixed"});
@@ -117,7 +117,7 @@ if ($(window).width() > 736) {
      $(".images").each(function(){
        var index = $(this).index(".images");
        $(this).css({
-         "top":100*index+"%"
+         "top":100*index+"vh"
          });
      });
    },50);
