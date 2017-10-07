@@ -169,6 +169,14 @@ if ($(window).width() > 736) {
 
 	      }
 
+        $(".info > h1:first-child").click(function() {
+
+          // var link = "http://www.goddblessthismess.com";
+          location.reload();
+
+        });
+
+
         if ($(window).width() > 736 ){
 
 				$(document).mousemove(function(){
@@ -181,6 +189,7 @@ if ($(window).width() > 736) {
             $(".contact").hide();
 					}
 				});
+
 
       } else {
         // nothing

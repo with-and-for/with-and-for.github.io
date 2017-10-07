@@ -61,6 +61,7 @@ iframe {
   position: relative;
   font-size: 45px !important;
   white-space:nowrap;
+  -webkit-transform: translateZ(0px);
 }
 
 a,a:visited,p > a {
@@ -103,6 +104,10 @@ h1 {
 
 .info > h1:first-child {
   font-weight: 500 !important;
+}
+
+.info > h1:first-child:hover {
+  color: #EE327A !important;
 }
 
 
@@ -158,11 +163,12 @@ body {
   }
 
   .links {
+    width: 50vw;
     min-height: auto;
     position: fixed;
     top: 200px;
     margin-left: 0;
-    right: 90px !important;
+    right: 30px !important;
     font-size: 16px !important;
   }
 
