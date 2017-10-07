@@ -157,12 +157,15 @@ if ($(window).width() > 736) {
           title = results[i].getStructuredText("info.title").asHtml();
 	        name = results[i].getStructuredText("info.name").asHtml();
 					contact = results[i].getStructuredText("info.contact").asHtml();
+          links = results[i].getStructuredText("info.links").asHtml();
 
+          var linkD = $("<div class='links'></div>");
 					var info = $("<div class='info'></div>");
-          var contactD = $("<div class='contact'></div>")
+          var contactD = $("<div class='contact'></div>");
+          linkD.append(links)
           contactD.append(contact);
 	     			info.append(title,name,contactD);
-						body.append(info);
+						body.append(info,linkD);
 
 	      }
 
@@ -171,10 +174,10 @@ if ($(window).width() > 736) {
 				$(document).mousemove(function(){
 					var half = $(window).width()*.35;
 					if (event.pageX < half){
-						$("h1,.contact > p > a").css({"color":"white"});
+						$(".info > h1,.contact > p > a").css({"color":"white"});
             $(".contact").fadeIn(400);
 					} else {
-						$("h1,.contact > p > a").css({"color":"#a5a5a5"});
+						$(".info > h1,.contact > p > a").css({"color":"#a5a5a5"});
             $(".contact").hide();
 					}
 				});
