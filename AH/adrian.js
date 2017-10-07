@@ -174,10 +174,10 @@ if ($(window).width() > 736) {
 				$(document).mousemove(function(){
 					var half = $(window).width()*.35;
 					if (event.pageX < half){
-						$(".info > h1,.contact > p > a").css({"color":"white"});
+						// $(".info > h1,.contact > p > a").css({"color":"white"});
             $(".contact").fadeIn(400);
 					} else {
-						$(".info > h1,.contact > p > a").css({"color":"#a5a5a5"});
+						// $(".info > h1,.contact > p > a").css({"color":"#a5a5a5"});
             $(".contact").hide();
 					}
 				});
