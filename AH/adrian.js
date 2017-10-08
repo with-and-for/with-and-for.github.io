@@ -186,20 +186,20 @@ if ($(window).width() > 736) {
 
 
 
-        $("body").on("click",".links > section",function(e){
+        $("body").on("click",".links > section",function(){
           // var index = $(this).index("h1");
           $(".close").show();
-          var fuck = $("iframe",this).prop("src");
-          if ( fuck.indexOf("vimeo") != -1 ){
+          var frame = $("iframe",this).prop("src");
+          if ( frame.indexOf("vimeo") != -1 ){
             console.log("vimeo");
-            fuck += "?autoplay=1";
+            frame += "?autoplay=1";
           } else {
-            fuck += "&autoplay=1";
+            frame += "&autoplay=1";
             console.log("youtube");
           }
           // fuck += "?autoplay=1";
-          $("iframe",this).prop("src",fuck);
-          console.log(fuck);
+          $("iframe",this).prop("src",frame);
+          console.log(frame);
           $(".links > section > h1,.contact,.info").hide();
           $("iframe").css("left","-100vw");
           $(this).children().css("left","0");
@@ -213,10 +213,10 @@ if ($(window).width() > 736) {
           $(".links > section > h1,.contact,.info").show();
 
           $("iframe").each(function(){
-            var fuck = $(this).attr("src");
-            fuck = fuck.replace("?autoplay=1", "").replace("&autoplay=1", "");
+            var frame = $(this).attr("src");
+            frame = frame.replace("?autoplay=1", "").replace("&autoplay=1", "");
             $(this).attr("src","");
-            $(this).attr("src",fuck);
+            $(this).attr("src",frame);
             $(this).css("left","-100vw");
           });
 
@@ -239,7 +239,7 @@ if ($(window).width() > 736) {
 
 
       } else {
-        $("click",".links > section").click(function(){
+        $("body").on("click",".links > section",function(){
           $(".images").hide();
         });
         $(".close").click(function(){
