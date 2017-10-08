@@ -214,6 +214,7 @@ body {
   .images {
     height: 100vh;
     width: 100vw;
+    z-index: 996 !important;
   }
 
   .contact {
