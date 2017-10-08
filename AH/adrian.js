@@ -151,28 +151,75 @@ if ($(window).width() > 736) {
 	    .submit(function (err, response) {
 	      var results = response.results;
 	      var body = $("body");
+        var link = [];
 
 	      for (var i = 0; i < results.length; i++) {
 
           title = results[i].getStructuredText("info.title").asHtml();
 	        name = results[i].getStructuredText("info.name").asHtml();
 					contact = results[i].getStructuredText("info.contact").asHtml();
-          links = results[i].getStructuredText("info.links").asHtml();
+          links = results[i].getGroup("info.video").asHtml();
 
           var linkD = $("<div class='links'></div>");
 					var info = $("<div class='info'></div>");
           var contactD = $("<div class='contact'></div>");
           linkD.append(links)
           contactD.append(contact);
-	     			info.append(title,name,contactD);
-						body.append(info,linkD);
+	     		info.append(title,name,contactD);
+					body.append(info,linkD);
+
+          link.push(links);
 
 	      }
 
-        $(".info > h1:first-child").click(function() {
+        console.log(link);
 
-          // var link = "http://www.goddblessthismess.com";
+        $(".info > h1:first-child").click(function() {
           location.reload();
+        });
+
+        $(".links > section").each(function(){
+          var f = $('<h1>"GODBLESSTHISMESS"</h1>');
+          $(f).appendTo(this);
+        });
+
+
+
+
+        $("body").on("click",".links > section",function(e){
+          // var index = $(this).index("h1");
+          $(".close").show();
+          var fuck = $("iframe",this).prop("src");
+          if ( fuck.indexOf("vimeo") != -1 ){
+            console.log("vimeo");
+            fuck += "?autoplay=1";
+          } else {
+            fuck += "&autoplay=1";
+            console.log("youtube");
+          }
+          // fuck += "?autoplay=1";
+          $("iframe",this).prop("src",fuck);
+          console.log(fuck);
+          $(".links > section > h1,.contact,.info").hide();
+          $("iframe").css("left","-100vw");
+          $(this).children().css("left","0");
+          console.log("hello");
+        });
+
+        $(".close").click(function(){
+          // location.reload();
+
+          $(this).hide();
+          $(".links > section > h1,.contact,.info").show();
+
+          $("iframe").each(function(){
+            var fuck = $(this).attr("src");
+            fuck = fuck.replace("?autoplay=1", "").replace("&autoplay=1", "");
+            $(this).attr("src","");
+            $(this).attr("src",fuck);
+            $(this).css("left","-100vw");
+          });
+
 
         });
 
