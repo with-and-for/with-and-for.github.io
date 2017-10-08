@@ -75,6 +75,11 @@ html {
   z-index: 996 !important;
 }
 
+.links > section > h1:hover {
+  color: #EE327A !important;
+}
+
+
 .close {
   border-radius: 50%;
   position: fixed;
