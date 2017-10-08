@@ -239,7 +239,12 @@ if ($(window).width() > 736) {
 
 
       } else {
-        // nothing
+        $("click",".links > section").click(function(){
+          $(".images").hide();
+        });
+        $(".close").click(function(){
+          $(".images").show();
+        });
       }
 
 
