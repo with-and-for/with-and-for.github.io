@@ -225,10 +225,12 @@ body {
     top: 10px;
     left: 20px;
     pointer-events: none;
+    font-size: 12px !important;
   }
 
-  .info,a {
+  .info > a, .info > h1 {
     color: white !important;
+    font-size: 12px !important;
   }
 
   .info > h1 {
@@ -238,4 +240,9 @@ body {
   .contact > p {
     position: relative;
     margin-bottom: 0 !important;
+    font-size: 12px !important;
+  }
+
+  .contact > p > a {
+    font-size: 12px !important;
   }
