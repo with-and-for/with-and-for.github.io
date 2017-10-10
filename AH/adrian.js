@@ -240,7 +240,7 @@ if ($(window).width() > 736) {
       } else {
         $("body").on("click",".links > section",function(){
           // var index = $(this).index("h1");
-          $(".close").show();
+          // $(".close").show();
           var frame = $("iframe",this).attr("src");
           window.location.href = frame;
 
