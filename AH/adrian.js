@@ -48,7 +48,7 @@ if ($(window).width() > 736) {
   var $divs = $("div.images");
 
   var ordered = $divs.sort(function (a, b) {
-   return $(b).find(".order").text() - $(a).find(".order").text();
+   return $(a).find(".order").text() - $(b).find(".order").text();
   });
 
   $(ordered).appendTo("body");
@@ -92,7 +92,7 @@ if ($(window).width() > 736) {
  var $divs = $("div.images");
 
  var ordered = $divs.sort(function (a, b) {
-  return $(a).find(".order").text() - $(b).find(".order").text();
+  return $(b).find(".order").text() - $(a).find(".order").text();
  });
 
  $(ordered).appendTo("body");
