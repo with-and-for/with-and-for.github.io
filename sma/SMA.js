@@ -175,6 +175,7 @@ console.log(tops);
 			 		$(".project,.pro,.home").show();
 			 		$(".infoabout").css("opacity","1");
 			 		$(".name").css("opacity","1");
+					$(".practice,.phil,.people").hide();
 			 	});
 
 				$(".studio").mouseover(function(){
