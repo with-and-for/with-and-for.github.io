@@ -16,6 +16,7 @@ Prismic.Api('https://liammontano.prismic.io/api', function (err, Api) {
       for (var i = 0; i < results.length; i++) {
 
 
+        color = results[i].getColor("project.border");
         order = results[i].getNumber("project.order");
         title = results[i].getStructuredText("project.title").asHtml();
 				year = results[i].getStructuredText("project.year").asHtml();
@@ -31,7 +32,7 @@ Prismic.Api('https://liammontano.prismic.io/api', function (err, Api) {
         var imagesD = $("<div class='images'></div>");
         var project = $("<div class='project'><p style='display:none' class='open'>+</p></div>");
 
-        var left = (i*10) + 20 + "vw";
+        var left = (Math.floor(Math.random() * 80)) + "vw";
         var top = (Math.floor(Math.random() * 50)) + "vh";
 
         console.log(left,top);
@@ -41,7 +42,7 @@ Prismic.Api('https://liammontano.prismic.io/api', function (err, Api) {
         descP.append(desc);
         thumbD.append(thumbnail);
         imagesD.append(images)
-        project.css({"left":left,"top":top}).append(orderP,titleP,yearP,descP,thumbD,imagesD);
+        project.css({"left":left,"top":top,"border-color":color}).append(orderP,titleP,yearP,descP,thumbD,imagesD);
 				body.append(project);
 
 
@@ -66,20 +67,23 @@ Prismic.Api('https://liammontano.prismic.io/api', function (err, Api) {
 
       });
 
+      $("body").css({"overflow":"scroll","width":"100% !important"});
+
       $(".desc,.images > section > img").show();
+
       $(".thumb").hide();
+
       $(".project").css({
+
         "position":"relative",
         "width":"100%",
         "left":"0",
-        "top":"10%",
-        "border-top":"4px solid black",
-        "border-bottom":"4px solid black",
+        "top":"0",
+        "border-radius":"none !important",
         "border-left":"none",
         "border-right":"none"
 
       });
-      $("body").css("overflow","scroll");
 
 
 
@@ -87,7 +91,7 @@ Prismic.Api('https://liammontano.prismic.io/api', function (err, Api) {
 
     } else {
 
-      $(".project:last").css({"background-color":"black","color":"white","top":"20px","left":"20px","border-color":"black","cursor":"pointer"});
+      $(".project:last").css({"background-color":"black","color":"white","top":"20px","left":"20px","border-color":"black","border-width":".5vh","cursor":"pointer"});
       $(".project:last > .thumb").hide();
 
       $('.project').each(function () {
@@ -111,6 +115,7 @@ Prismic.Api('https://liammontano.prismic.io/api', function (err, Api) {
         $(".open").not(this).hide();
         $(".thumb").not(this).show();
         $(".project:last > .thumb").hide();
+        $(".project:last").css({"top":"20px","left":"20px"});
         $(".images > section > img,.desc").not(this).hide();
         $(this).addClass("big");
         $(".open",this).show();

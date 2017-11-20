@@ -73,10 +73,10 @@ h1 {
 }
 
 .project {
-	border-radius: 2px;
 	cursor: move;
 	margin: 0;
-	border: .5vh solid black;
+	border: solid;
+  border-width: 2vh .5vh .5vh .5vh;
 	overflow: hidden;
 	background-color: rgba(255, 255, 255, 0.98);
 	position: absolute;
@@ -90,6 +90,7 @@ h1 {
 
 .project:hover {
 	border-color: #e0e0e0;
+  z-index: 999 !important;
 }
 
 .cover {
@@ -112,8 +113,7 @@ h1 {
 .big {
 	cursor: default;
 	border: none;
-	border-right: .5vh solid black;
-	border-color: black !important;
+	border-right: .5vh solid;
 	background-color: white:
 	position: relative;
 	height: 100vh;
