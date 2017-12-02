@@ -37,12 +37,12 @@ Prismic.Api('https://liammontano.prismic.io/api', function (err, Api) {
 
         console.log(left,top);
         orderP.append(order);
-        titleP.append(title);
-        yearP.append(year);
+        titleP.append(title,year).css("background-color",color);
+        // yearP.append(year);
         descP.append(desc);
         thumbD.append(thumbnail);
         imagesD.append(images)
-        project.css({"left":left,"top":top,"border-color":color}).append(orderP,titleP,yearP,descP,thumbD,imagesD);
+        project.css({"left":left,"top":top,"border-color": color}).append(orderP,titleP,descP,thumbD,imagesD);
 				body.append(project);
 
 
@@ -79,7 +79,7 @@ Prismic.Api('https://liammontano.prismic.io/api', function (err, Api) {
         "width":"100%",
         "left":"0",
         "top":"0",
-        "border-radius":"none !important",
+        "border-radius":"0px 0px 0px 0px !important",
         "border-left":"none",
         "border-right":"none"
 
@@ -91,7 +91,14 @@ Prismic.Api('https://liammontano.prismic.io/api', function (err, Api) {
 
     } else {
 
-      $(".project:last").css({"background-color":"black","color":"white","top":"20px","left":"20px","border-color":"black","border-width":".5vh","cursor":"pointer"});
+      $(".project:last").css({
+      "background-color":"black",
+      "color":"white","top":"20px",
+      "left":"20px",
+      "border-color":"black",
+      "border-width":".5vh",
+      "border-radius": "5px 5px 5px 5px",
+      "cursor":"pointer"});
       $(".project:last > .thumb").hide();
 
       $('.project').each(function () {
@@ -117,7 +124,7 @@ Prismic.Api('https://liammontano.prismic.io/api', function (err, Api) {
         $(".project:last > .thumb").hide();
         $(".project:last").css({"top":"20px","left":"20px"});
         $(".images > section > img,.desc").not(this).hide();
-        $(this).addClass("big");
+        $(this).addClass("big").css("border-radius","0px 0px 0px 0px !important");
         $(".open",this).show();
         $(".images > section > img,.desc",this).show();
         $(".thumb",this).hide();
