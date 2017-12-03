@@ -69,7 +69,7 @@ Prismic.Api('https://liammontano.prismic.io/api', function (err, Api) {
 
       $("body").css({"overflow":"scroll","width":"100% !important"});
 
-      $(".desc,.images > section > img").show();
+      $(".desc,.images > section > img,.thumb").hide();
 
       $(".thumb").hide();
 
@@ -81,9 +81,20 @@ Prismic.Api('https://liammontano.prismic.io/api', function (err, Api) {
         "top":"0",
         "border-radius":"0px 0px 0px 0px !important",
         "border-left":"none",
-        "border-right":"none"
+        "border-right":"none",
+        "height":"auto"
 
       });
+
+      $(".project").click(function(){
+      	console.log("hello");
+
+      	$(".desc,.images > section > img").not(this).hide();
+      	$(".desc,.images > section > img",this).show();
+
+
+      });
+
 
 
 

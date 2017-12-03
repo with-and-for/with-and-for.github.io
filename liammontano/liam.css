@@ -136,3 +136,23 @@ h1 {
 	overflow: scroll;
 	z-index:998;
 }
+
+@media screen and (max-width: 736px){ 
+
+		.project {
+		border-radius: 0px 0px 0px 0px !important;
+		-webkit-transition: height .5s;
+  		-moz-transition: height .5s;
+  		-o-transition: height .5s;
+		}
+
+		.title {
+			margin-bottom: 0;
+		}
+
+		.project:last-child {
+			border-bottom: 2px solid black !important;
+		}
+
+
+	}
