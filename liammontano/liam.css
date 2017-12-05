@@ -48,6 +48,7 @@ h1 {
 }
 
 .open {
+	font-weight: 300;
 	position: fixed;
 	margin: 0;
 	top: -5px;
@@ -84,14 +85,14 @@ h1 {
 }
 
 .project {
-	border-radius: 5px 5px 0px 0px;
+	border-radius: 8px 8px 0px 0px;
 	cursor: move;
 	margin: 0;
 	/*border: solid;
   	border-width: 3vh 0vh 0vh 0vh;*/
 	overflow: hidden;
 	overflow-x: hidden;
-	background-color: rgba(255, 255, 255, 0.4);
+	background-color: rgba(255, 255, 255, 0.9);
 	position: absolute;
 	float: left;
 	width: 20vw;
